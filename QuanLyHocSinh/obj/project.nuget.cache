@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r+vsldPT3uINFSCWxrVDexZ7ObZ3dmRkBnrCKxaMvzf8WpJwEZoeA0uTSKBDg5JljkUZSzoe0USJBCRhkOYQZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.reporting.winforms.v11\\1.0.0\\microsoft.reporting.winforms.v11.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

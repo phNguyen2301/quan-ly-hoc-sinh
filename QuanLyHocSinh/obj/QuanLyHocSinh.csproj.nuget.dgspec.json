@@ -1,0 +1,115 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
+        "projectName": "BUS",
+        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj"
+              },
+              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
+        "projectName": "DAO",
+        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+        "projectName": "QuanLyHocSinh",
+        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
+              },
+              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Microsoft.Reporting.WinForms.v11": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

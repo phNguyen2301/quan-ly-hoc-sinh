@@ -1,0 +1,307 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "Microsoft.Reporting.WinForms.v11/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        }
+      },
+      "BUS/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DAO": "1.0.0",
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BUS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BUS.dll": {}
+        }
+      },
+      "DAO/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAO.dll": {}
+        }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "Microsoft.Reporting.WinForms.v11/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        }
+      },
+      "BUS/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DAO": "1.0.0",
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BUS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BUS.dll": {}
+        }
+      },
+      "DAO/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAO.dll": {}
+        }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "Microsoft.Reporting.WinForms.v11/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        }
+      },
+      "BUS/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DAO": "1.0.0",
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BUS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BUS.dll": {}
+        }
+      },
+      "DAO/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAO.dll": {}
+        }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "Microsoft.Reporting.WinForms.v11/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL": {},
+          "lib/Microsoft.ReportViewer.WinForms.DLL": {},
+          "lib/Microsoft.SqlServer.Types.dll": {}
+        }
+      },
+      "BUS/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DAO": "1.0.0",
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BUS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BUS.dll": {}
+        }
+      },
+      "DAO/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAO.dll": {}
+        }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Reporting.WinForms.v11/1.0.0": {
+      "sha512": "vCo5lmi/DTTNUt9FNKyyn8imFaYrHstqXnf1zl/oLqLcN4LE30oM06HcUH4iRDZrnj6eoJf8PWLvVN1oJ4dbMw==",
+      "type": "package",
+      "path": "microsoft.reporting.winforms.v11/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.ReportViewer.Common.dll",
+        "lib/Microsoft.ReportViewer.ProcessingObjectModel.DLL",
+        "lib/Microsoft.ReportViewer.WinForms.DLL",
+        "lib/Microsoft.SqlServer.Types.dll",
+        "microsoft.reporting.winforms.v11.1.0.0.nupkg.sha512",
+        "microsoft.reporting.winforms.v11.nuspec"
+      ]
+    },
+    "BUS/1.0.0": {
+      "type": "project",
+      "path": "../BUS/BUS.csproj",
+      "msbuildProject": "../BUS/BUS.csproj"
+    },
+    "DAO/1.0.0": {
+      "type": "project",
+      "path": "../DAO/DAO.csproj",
+      "msbuildProject": "../DAO/DAO.csproj"
+    },
+    "DTO/1.0.0": {
+      "type": "project",
+      "path": "../DTO/DTO.csproj",
+      "msbuildProject": "../DTO/DTO.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "BUS >= 1.0.0",
+      "DTO >= 1.0.0",
+      "Microsoft.Reporting.WinForms.v11 >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\nguye\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+      "projectName": "QuanLyHocSinh",
+      "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://www.nuget.org/": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {
+            "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
+            },
+            "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "Microsoft.Reporting.WinForms.v11": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
