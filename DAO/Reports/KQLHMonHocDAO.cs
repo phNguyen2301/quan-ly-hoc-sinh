@@ -19,10 +19,10 @@ namespace DAO
             private set => instance = value;
         }
 
-        public DataTable Report(string maNamHoc, string maMonHoc, string maHocKy)
+        public DataTable Report(string maMonHoc, string maHocKy)
         {
             string query = "EXEC ReportKQLHMonHoc @maNamHoc , @maMonHoc , @maHocKy";
-            object[] parameters = new object[] { maNamHoc, maMonHoc, maHocKy };
+            object[] parameters = new object[] { maMonHoc, maHocKy };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 
@@ -31,7 +31,6 @@ namespace DAO
             string query = "EXEC ThemKQLHMonHoc @maLop , @maNamHoc , @maMonHoc , @maHocKy , @soLuongDat , @tiLe";
             object[] parameters = new object[] {
                 ketQua.Lop.MaLop,
-                ketQua.NamHoc.MaNamHoc,
                 ketQua.MonHoc.MaMonHoc,
                 ketQua.HocKy.MaHocKy,
                 ketQua.SoLuongDat,
@@ -40,10 +39,10 @@ namespace DAO
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 
-        public void XoaKetQua(string maLop, string maNamHoc, string maMonHoc, string maHocKy)
+        public void XoaKetQua(string maLop, string maMonHoc, string maHocKy)
         {
             string query = "EXEC XoaKQLHMonHoc @maLop , @maNamHoc , @maMonHoc , @maHocKy";
-            object[] parameters = new object[] { maLop, maNamHoc, maMonHoc, maHocKy };
+            object[] parameters = new object[] { maLop, maMonHoc, maHocKy };
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
     }

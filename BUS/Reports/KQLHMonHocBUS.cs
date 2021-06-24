@@ -22,7 +22,7 @@ namespace BUS
             private set => instance = value;
         }
 
-        public void LuuKetQua(string maLop, string maNamHoc, string maMonHoc, string maHocKy)
+        public void LuuKetQua(string maLop, string maMonHoc, string maHocKy)
         {
             LopDTO lop = new LopDTO();
             lop.MaLop = maLop;
@@ -34,14 +34,10 @@ namespace BUS
             HocKyDTO hocKy = new HocKyDTO();
             hocKy.MaHocKy = maHocKy;
 
-            NamHocDTO namHoc = new NamHocDTO();
-            namHoc.MaNamHoc = maNamHoc;
-
-            int soLuongDat = DiemBUS.Instance.LaySoLuongDat(maLop, maNamHoc, maMonHoc, maHocKy);
-            KQLHMonHocDAO.Instance.XoaKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
+            int soLuongDat = DiemBUS.Instance.LaySoLuongDat(maLop, maMonHoc, maHocKy);
+            KQLHMonHocDAO.Instance.XoaKetQua(maLop, maMonHoc, maHocKy);
             KQLHMonHocDAO.Instance.LuuKetQua(new KQLHMonHocDTO(
-                lop, 
-                namHoc, 
+                lop,
                 monHoc, 
                 hocKy, 
                 soLuongDat, 
@@ -49,9 +45,9 @@ namespace BUS
             ));
         }
 
-        public IList<KQLHMonHocDTO> Report(string maNamHoc, string maMonHoc, string maHocKy)
+        public IList<KQLHMonHocDTO> Report(string maMonHoc, string maHocKy)
         {
-            DataTable dataTable = KQLHMonHocDAO.Instance.Report(maNamHoc, maMonHoc, maHocKy);
+            DataTable dataTable = KQLHMonHocDAO.Instance.Report(maMonHoc, maHocKy);
             IList<KQLHMonHocDTO> ilist = new List<KQLHMonHocDTO>();
 
             foreach (DataRow Row in dataTable.Rows)
@@ -60,10 +56,6 @@ namespace BUS
                 lop.MaLop = Convert.ToString(Row["MaLop"]);
                 lop.TenLop = Convert.ToString(Row["TenLop"]);
                 lop.SiSo = Convert.ToInt32(Row["SiSo"]);
-
-                NamHocDTO namHoc = new NamHocDTO();
-                namHoc.MaNamHoc = Convert.ToString(Row["MaNamHoc"]);
-                namHoc.TenNamHoc = Convert.ToString(Row["TenNamHoc"]);
 
                 MonHocDTO monHoc = new MonHocDTO();
                 monHoc.MaMonHoc = Convert.ToString(Row["MaMonHoc"]);
@@ -75,7 +67,6 @@ namespace BUS
 
                 ilist.Add(new KQLHMonHocDTO(
                     lop,
-                    namHoc,
                     monHoc,
                     hocKy,
                     Convert.ToInt32(Row["SoLuongDat"]),

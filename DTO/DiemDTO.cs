@@ -13,8 +13,7 @@
         public DiemDTO(
             string maHocSinh, 
             string maMonHoc, 
-            string maHocKy, 
-            string maNamHoc, 
+            string maHocKy,  
             string maLop, 
             string maLoaiDiem, 
             float diemSo)
@@ -22,7 +21,6 @@
             this.maHocSinh = maHocSinh;
             this.maMonHoc = maMonHoc;
             this.maHocKy = maHocKy;
-            this.maNamHoc = maNamHoc;
             this.maLop = maLop;
             this.maLoaiDiem = maLoaiDiem;
             this.diemSo = diemSo;

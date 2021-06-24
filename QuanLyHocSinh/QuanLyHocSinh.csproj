@@ -80,12 +80,6 @@
     <Compile Include="frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGiaoVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGiaoVien.Designer.cs">
-      <DependentUpon>frmGiaoVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHanhKiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,12 +134,6 @@
     <Compile Include="frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNamHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNamHoc.Designer.cs">
-      <DependentUpon>frmNamHoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmKhoiLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,12 +151,6 @@
     </Compile>
     <Compile Include="frmNguoiDung.Designer.cs">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPhanCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhanCong.Designer.cs">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhanLop.cs">
       <SubType>Form</SubType>
@@ -202,42 +184,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmDanhSachHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmDanhSachHocSinh.Designer.cs">
-      <DependentUpon>frmDanhSachHocSinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\frmHoSoLopHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmHoSoLopHoc.Designer.cs">
-      <DependentUpon>frmHoSoLopHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\frmKQHSCaNam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmKQHSCaNam.Designer.cs">
-      <DependentUpon>frmKQHSCaNam.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\frmKQHSMonHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmKQHSMonHoc.Designer.cs">
-      <DependentUpon>frmKQHSMonHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\frmKQLHHocKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmKQLHHocKy.Designer.cs">
-      <DependentUpon>frmKQLHHocKy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\frmKQLHMonHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmKQLHMonHoc.Designer.cs">
-      <DependentUpon>frmKQLHMonHoc.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGiaoVien.resx">
-      <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHanhKiem.resx">
       <DependentUpon>frmHanhKiem.cs</DependentUpon>
@@ -280,9 +223,6 @@
     <EmbeddedResource Include="frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNamHoc.resx">
-      <DependentUpon>frmNamHoc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmKhoiLop.resx">
       <DependentUpon>frmKhoiLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhanCong.resx">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhanLop.resx">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
@@ -312,30 +249,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmDanhSachHocSinh.resx">
-      <DependentUpon>frmDanhSachHocSinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmHoSoLopHoc.resx">
-      <DependentUpon>frmHoSoLopHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmKQHSCaNam.resx">
-      <DependentUpon>frmKQHSCaNam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmKQHSMonHoc.resx">
-      <DependentUpon>frmKQHSMonHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmKQLHHocKy.resx">
-      <DependentUpon>frmKQLHHocKy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmKQLHMonHoc.resx">
-      <DependentUpon>frmKQLHMonHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptDanhSachHocSinh.rdlc" />
-    <EmbeddedResource Include="Reports\rptHoSoLopHoc.rdlc" />
-    <EmbeddedResource Include="Reports\rptKQHSCaNam.rdlc" />
-    <EmbeddedResource Include="Reports\rptKQHSMonHoc.rdlc" />
-    <EmbeddedResource Include="Reports\rptKQLHHocKy.rdlc" />
-    <EmbeddedResource Include="Reports\rptKQLHMonHoc.rdlc" />
     <None Include="Properties\DataSources\DTO.DiemDTO.datasource" />
     <None Include="Properties\DataSources\DTO.GiaoVienDTO.datasource" />
     <None Include="Properties\DataSources\DTO.HanhKiemDTO.datasource" />
@@ -539,5 +452,6 @@
       <Version>1.0.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

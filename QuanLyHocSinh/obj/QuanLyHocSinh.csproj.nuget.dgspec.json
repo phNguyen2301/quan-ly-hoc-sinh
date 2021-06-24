@@ -1,22 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {}
+    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
+        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
         "projectName": "BUS",
-        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
+        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj"
+              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj"
               },
-              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
               }
             }
           }
@@ -26,16 +26,16 @@
         "net472": {}
       }
     },
-    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
+    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
+        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
         "projectName": "DAO",
-        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
+        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
               }
             }
           }
@@ -45,24 +45,24 @@
         "net472": {}
       }
     },
-    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {
+    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
         "projectName": "QuanLyHocSinh",
-        "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
+        "outputPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -74,16 +74,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
-                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
+              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
               },
-              "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
               }
             }
           }

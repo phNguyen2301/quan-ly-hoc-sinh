@@ -4,3 +4,14 @@ C:\Users\nguye\Programing\school\doan\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.csprojA
 C:\Users\nguye\Programing\school\doan\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\nguye\Programing\school\doan\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.dll
 C:\Users\nguye\Programing\school\doan\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\bin\Debug\DTO.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\bin\Debug\DTO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DTO\obj\Debug\DTO.csproj.CopyComplete

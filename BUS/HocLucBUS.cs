@@ -70,9 +70,9 @@ namespace BUS
             return xepLoai;
         }
 
-        public string XepLoaiHocLucCaNam(string maHocSinh, string maLop, string maNamHoc)
+        public string XepLoaiHocLucCaNam(string maHocSinh, string maLop)
         {
-            DataTable dataTable = MonHocDAO.Instance.LayDanhSachMonHoc(maNamHoc, maLop);
+            DataTable dataTable = MonHocDAO.Instance.LayDanhSachMonHoc(maLop);
             float tongDiemCacMon = 0;
             int tongHeSoCacMon = 0;
 
@@ -81,7 +81,7 @@ namespace BUS
 
             foreach (DataRow row in dataTable.Rows)
             {
-                float diemTBTungMon = DiemBUS.Instance.LayDiemTBCNTheoMon(maHocSinh, row["MaMonHoc"].ToString(), maNamHoc, maLop);
+                float diemTBTungMon = DiemBUS.Instance.LayDiemTBCNTheoMon(maHocSinh, row["MaMonHoc"].ToString(), maLop);
                 int heSo = Convert.ToInt32(row["HeSo"].ToString());
 
                 arrayDiemTBTungMon[soMonHoc++] = diemTBTungMon;

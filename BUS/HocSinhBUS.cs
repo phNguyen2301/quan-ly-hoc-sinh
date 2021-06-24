@@ -94,11 +94,10 @@ namespace BUS
         public void HienThiHocSinhTheoLop(
             BindingNavigator bindingNavigator,
             DataGridViewX dataGridViewX, 
-            string namHoc, 
             string lop)
         {
             BindingSource bs = new BindingSource();
-            bs.DataSource = HocSinhDAO.Instance.LayDanhSachHocSinh(namHoc, lop);
+            bs.DataSource = HocSinhDAO.Instance.LayDanhSachHocSinh(lop);
             bindingNavigator.BindingSource = bs;
             dataGridViewX.DataSource = bs;
         }
@@ -117,9 +116,9 @@ namespace BUS
             }
         }
 
-        public void HienThiComboBox(string namHoc, string lop, ComboBoxEx comboBox)
+        public void HienThiComboBox(string lop, ComboBoxEx comboBox)
         {
-            comboBox.DataSource = HocSinhDAO.Instance.LayDanhSachHocSinh(namHoc, lop);
+            comboBox.DataSource = HocSinhDAO.Instance.LayDanhSachHocSinh(lop);
             comboBox.DisplayMember = "HoTen";
             comboBox.ValueMember = "MaHocSinh";
         }
@@ -148,9 +147,9 @@ namespace BUS
             return ilist;
         }
 
-        public IList<HocSinhDTO> Report(string namHoc, string lop)
+        public IList<HocSinhDTO> Report(string lop)
         {
-            DataTable dataTable = HocSinhDAO.Instance.LayDanhSachHocSinh(namHoc, lop, true);
+            DataTable dataTable = HocSinhDAO.Instance.LayDanhSachHocSinh(lop, true);
             IList<HocSinhDTO> ilist = new List<HocSinhDTO>();
 
             foreach (DataRow Row in dataTable.Rows)

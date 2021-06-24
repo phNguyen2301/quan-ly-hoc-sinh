@@ -19,10 +19,10 @@ namespace DAO
             private set => instance = value;
         }
 
-        public DataTable Report(string maLop, string maNamHoc)
+        public DataTable Report(string maLop)
         {
             string query = "EXEC ReportKQHSCaNam @maLop , @maNamHoc";
-            object[] parameters = new object[] { maLop, maNamHoc };
+            object[] parameters = new object[] { maLop};
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 
@@ -32,7 +32,6 @@ namespace DAO
             object[] parameters = new object[] {
                 ketQua.HocSinh.MaHocSinh,
                 ketQua.Lop.MaLop,
-                ketQua.NamHoc.MaNamHoc,
                 ketQua.HocLuc.MaHocLuc,
                 ketQua.HanhKiem.MaHanhKiem,
                 ketQua.KetQua.MaKetQua,
@@ -43,10 +42,10 @@ namespace DAO
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 
-        public void XoaKetQua(string maHocSinh, string maLop, string maNamHoc)
+        public void XoaKetQua(string maHocSinh, string maLop)
         {
             string query = "EXEC XoaKQHSCaNam @maHocSinh , @maLop , @maNamHoc";
-            object[] parameters = new object[] { maHocSinh, maLop, maNamHoc };
+            object[] parameters = new object[] { maHocSinh, maLop};
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
     }

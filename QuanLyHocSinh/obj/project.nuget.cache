@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r+vsldPT3uINFSCWxrVDexZ7ObZ3dmRkBnrCKxaMvzf8WpJwEZoeA0uTSKBDg5JljkUZSzoe0USJBCRhkOYQZQ==",
+  "dgSpecHash": "WhgSD9itwIZ39gB1DLXr5V1i4zzHUXHT3ZQ2B/fVzx0bNSab32qdMXQO81GG6ivwgvHD23fIrXzZhVl+FDoHmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nguye\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+  "projectFilePath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nguye\\.nuget\\packages\\microsoft.reporting.winforms.v11\\1.0.0\\microsoft.reporting.winforms.v11.1.0.0.nupkg.sha512"
   ],

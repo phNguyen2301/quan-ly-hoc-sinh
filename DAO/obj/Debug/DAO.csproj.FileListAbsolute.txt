@@ -16,3 +16,16 @@ C:\Users\nguye\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 C:\Users\nguye\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\nguye\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.dll
 C:\Users\nguye\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\DAO.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\DAO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\DTO.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\DTO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\obj\Debug\DAO.pdb
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+C:\Users\nguye\programing\nmcnpm\quan-ly-hoc-sinh\DAO\bin\Debug\Microsoft.SqlServer.Types.dll

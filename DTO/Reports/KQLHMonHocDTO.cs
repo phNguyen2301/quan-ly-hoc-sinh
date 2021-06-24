@@ -3,7 +3,6 @@
     public class KQLHMonHocDTO
     {
         private LopDTO lop;
-        private NamHocDTO namHoc;
         private MonHocDTO monHoc;
         private HocKyDTO hocKy;
         private int soLuongDat;
@@ -11,14 +10,12 @@
 
         public KQLHMonHocDTO(
             LopDTO lop, 
-            NamHocDTO namHoc, 
             MonHocDTO monHoc, 
             HocKyDTO hocKy, 
             int soLuongDat, 
             float tiLe)
         {
             this.lop = lop;
-            this.namHoc = namHoc;
             this.monHoc = monHoc;
             this.hocKy = hocKy;
             this.soLuongDat = soLuongDat;
@@ -26,7 +23,6 @@
         }
 
         public LopDTO Lop { get => lop; set => lop = value; }
-        public NamHocDTO NamHoc { get => namHoc; set => namHoc = value; }
         public MonHocDTO MonHoc { get => monHoc; set => monHoc = value; }
         public HocKyDTO HocKy { get => hocKy; set => hocKy = value; }
         public int SoLuongDat { get => soLuongDat; set => soLuongDat = value; }

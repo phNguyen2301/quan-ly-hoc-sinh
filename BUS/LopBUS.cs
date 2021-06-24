@@ -31,9 +31,7 @@ namespace BUS
             TextBoxX txtMaLop,
             TextBoxX txtTenLop,
             ComboBoxEx cmbKhoiLop,
-            ComboBoxEx cmbNamHoc,
-            IntegerInput iniSiSo,
-            ComboBoxEx cmbGiaoVien)
+            IntegerInput iniSiSo)
         {
             bindingSource.DataSource = LopDAO.Instance.LayDanhSachLop();
             bindingNavigator.BindingSource = bindingSource;
@@ -48,14 +46,9 @@ namespace BUS
             cmbKhoiLop.DataBindings.Clear();
             cmbKhoiLop.DataBindings.Add("SelectedValue", bindingSource, "MaKhoiLop");
 
-            cmbNamHoc.DataBindings.Clear();
-            cmbNamHoc.DataBindings.Add("SelectedValue", bindingSource, "MaNamHoc");
-
             iniSiSo.DataBindings.Clear();
             iniSiSo.DataBindings.Add("Text", bindingSource, "SiSo");
 
-            cmbGiaoVien.DataBindings.Clear();
-            cmbGiaoVien.DataBindings.Add("SelectedValue", bindingSource, "MaGiaoVien");
         }
 
         public void HienThiComboBox(ComboBoxEx comboBox)
@@ -65,16 +58,10 @@ namespace BUS
             comboBox.ValueMember = "MaLop";
         }
 
-        public void HienThiComboBox(string namHoc, ComboBoxEx comboBox)
-        {
-            comboBox.DataSource = LopDAO.Instance.LayDanhSachLop(namHoc);
-            comboBox.DisplayMember = "TenLop";
-            comboBox.ValueMember = "MaLop";
-        }
 
-        public void HienThiComboBox(string khoiLop, string namHoc, ComboBoxEx comboBox)
+        public void HienThiComboBox(string khoiLop, ComboBoxEx comboBox)
         {
-            comboBox.DataSource = LopDAO.Instance.LayDanhSachLop(khoiLop, namHoc);
+            comboBox.DataSource = LopDAO.Instance.LayDanhSachLop(khoiLop);
             comboBox.DisplayMember = "TenLop";
             comboBox.ValueMember = "MaLop";
         }

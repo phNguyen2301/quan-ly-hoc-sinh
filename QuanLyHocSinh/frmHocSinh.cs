@@ -25,7 +25,7 @@ namespace QuanLyHocSinh
             TonGiaoBUS.Instance.HienThiDgvCmbCol(colMaTonGiao);
             NgheNghiepBUS.Instance.HienThiDgvCmbColCha(colMaNgheCha);
             NgheNghiepBUS.Instance.HienThiDgvCmbColMe(colMaNgheMe);
-
+            // Them LopBus.Instance.HienThiDgvCmbCol
             bindingNavigatorRefreshItem_Click(sender, e);
         }
 
@@ -50,6 +50,7 @@ namespace QuanLyHocSinh
             dataRow["HoTenMe"] = "";
             dataRow["MaNNghiepMe"] = "";
             dataRow["Email"] = "";
+            // dataRow["MaLop"]
 
             dataTable.Rows.Add(dataRow);
             bindingSource.MoveLast();
@@ -74,6 +75,7 @@ namespace QuanLyHocSinh
                 txtHoTenMe,
                 cmbNgheNghiepMe,
                 txtEmail
+                //maLop
             );
         }
 
@@ -103,6 +105,7 @@ namespace QuanLyHocSinh
                 "colHoTenMe",
                 "colMaNNghiepMe",
                 "colEmail",
+                //Malop
             };
             if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvHocSinh, colNames) &&
                 KiemTraTruocKhiLuu.KiemTraDoTuoi(dgvHocSinh, "colNgaySinh"))
@@ -149,6 +152,8 @@ namespace QuanLyHocSinh
             NgheNghiepBUS.Instance.HienThiDgvCmbColMe(colMaNgheMe);
         }
 
+        //private void btnThemLop
+
         private void btnLuuVaoDS_Click(object sender, EventArgs e)
         {
             bool gioiTinh = false;
@@ -165,6 +170,7 @@ namespace QuanLyHocSinh
                 cmbTonGiao.SelectedValue == null ||
                 cmbNgheNghiepCha.SelectedValue == null ||
                 cmbNgheNghiepMe.SelectedValue == null)
+                // cmbmaLop
                 MessageBox.Show(
                     "Giá trị của các ô không được rỗng !",
                     "ERROR",
@@ -188,6 +194,7 @@ namespace QuanLyHocSinh
                         txtHoTenMe.Text,
                         cmbNgheNghiepMe.SelectedValue.ToString(),
                         txtEmail.Text
+                        //MaLop
                     );
                     HocSinhBUS.Instance.ThemHocSinh(hocSinh);
                     bindingNavigatorRefreshItem_Click(sender, e);

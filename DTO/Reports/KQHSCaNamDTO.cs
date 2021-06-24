@@ -4,7 +4,6 @@
     {
         private HocSinhDTO hocSinh;
         private LopDTO lop;
-        private NamHocDTO namHoc;
         private HocLucDTO hocLuc;
         private HanhKiemDTO hanhKiem;
         private KetQuaDTO ketQua;
@@ -15,9 +14,6 @@
         public KQHSCaNamDTO(
             HocSinhDTO hocSinh, 
             LopDTO lop, 
-            NamHocDTO namHoc, 
-            HocLucDTO hocLuc, 
-            HanhKiemDTO hanhKiem, 
             KetQuaDTO ketQua, 
             float diemTBHK1, 
             float diemTBHK2, 
@@ -25,9 +21,6 @@
         {
             this.hocSinh = hocSinh;
             this.lop = lop;
-            this.namHoc = namHoc;
-            this.hocLuc = hocLuc;
-            this.hanhKiem = hanhKiem;
             this.ketQua = ketQua;
             this.diemTBHK1 = diemTBHK1;
             this.diemTBHK2 = diemTBHK2;
@@ -36,7 +29,6 @@
 
         public HocSinhDTO HocSinh { get => hocSinh; set => hocSinh = value; }
         public LopDTO Lop { get => lop; set => lop = value; }
-        public NamHocDTO NamHoc { get => namHoc; set => namHoc = value; }
         public HocLucDTO HocLuc { get => hocLuc; set => hocLuc = value; }
         public HanhKiemDTO HanhKiem { get => hanhKiem; set => hanhKiem = value; }
         public KetQuaDTO KetQua { get => ketQua; set => ketQua = value; }
