@@ -9,14 +9,11 @@ namespace DAO
     public class DataProvider
     {
         private static DataProvider instance;
+        //private string connectionString = "Data Source=(local); Initial Catalog=QuanLyHocSinh; Integrated Security=True";
 
         private string connectionString = @"
-            Data Source=qlhs.database.windows.net;
-            Initial Catalog=QuanLyHocSinh;
-            Persist Security Info=True;
-            User ID=nguyen230101;
-            Password=Tom@886643;
-        ";
+            Data Source=qlhs.database.windows.net;Initial Catalog=QuanLyHocSinh;User ID=nguyen230101; password=Tom@886643;
+         ";
 
         private DataProvider() { }
 

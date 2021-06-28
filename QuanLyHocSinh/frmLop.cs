@@ -18,8 +18,12 @@ namespace QuanLyHocSinh
         private void frmLop_Load(object sender, EventArgs e)
         {
             KhoiLopBUS.Instance.HienThiComboBox(cmbKhoiLop);
+            NamHocBUS.Instance.HienThiComboBox(cmbNamHoc);
+            GiaoVienBUS.Instance.HienThiComboBox(cmbGiaoVien);
 
             KhoiLopBUS.Instance.HienThiDgvCmbCol(colMaKhoiLop);
+            NamHocBUS.Instance.HienThiDgvCmbCol(colMaNamHoc);
+            GiaoVienBUS.Instance.HienThiDgvCmbCol(colMaGiaoVien);
 
             bindingNavigatorRefreshItem_Click(sender, e);
         }
@@ -35,7 +39,9 @@ namespace QuanLyHocSinh
             dataRow["MaLop"] = "";
             dataRow["TenLop"] = "";
             dataRow["MaKhoiLop"] = "";
+            dataRow["MaNamHoc"] = "";
             dataRow["SiSo"] = 0;
+            dataRow["MaGiaoVien"] = "";
 
             dataTable.Rows.Add(dataRow);
             bindingSource.MoveLast();
@@ -49,7 +55,9 @@ namespace QuanLyHocSinh
                 txtMaLop,
                 txtTenLop,
                 cmbKhoiLop,
-                iniSiSo
+                cmbNamHoc,
+                iniSiSo,
+                cmbGiaoVien
             );
         }
 
@@ -68,7 +76,7 @@ namespace QuanLyHocSinh
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            string[] colNames = { "colMaLop", "colTenLop", "colMaKhoiLop", "colMaNamHoc" };
+            string[] colNames = { "colMaLop", "colTenLop", "colMaKhoiLop", "colMaNamHoc", "colMaGiaoVien" };
             if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvLop, colNames) &&
                 KiemTraTruocKhiLuu.KiemTraSiSo(dgvLop, "colSiSo"))
             {
@@ -99,7 +107,14 @@ namespace QuanLyHocSinh
         private void btnThemNamHoc_Click(object sender, EventArgs e)
         {
             Utilities.ShowForm("frmNamHoc");
+            NamHocBUS.Instance.HienThiDgvCmbCol(colMaNamHoc);
 
+        }
+
+        private void btnThemGiaoVien_Click(object sender, EventArgs e)
+        {
+            Utilities.ShowForm("frmGiaoVien");
+            GiaoVienBUS.Instance.HienThiDgvCmbCol(colMaGiaoVien);
         }
 
         private void btnLuuVaoDS_Click(object sender, EventArgs e)
@@ -107,6 +122,8 @@ namespace QuanLyHocSinh
             if (string.IsNullOrWhiteSpace(txtMaLop.Text) ||
                 string.IsNullOrWhiteSpace(txtTenLop.Text)  ||
                 cmbKhoiLop.SelectedValue == null ||
+                cmbNamHoc.SelectedValue == null ||
+                cmbGiaoVien.SelectedValue == null ||
                 !QuyDinhBUS.Instance.KiemTraSiSo(iniSiSo.Value))
                 MessageBox.Show(
                     "Giá trị của các ô không được rỗng và sỉ số phải theo quy định !", 
@@ -119,8 +136,10 @@ namespace QuanLyHocSinh
                 LopDTO lop = new LopDTO(
                     txtMaLop.Text, 
                     txtTenLop.Text,
-                    cmbKhoiLop.SelectedValue.ToString(), 
-                    iniSiSo.Value
+                    cmbKhoiLop.SelectedValue.ToString(),
+                    cmbNamHoc.SelectedValue.ToString(), 
+                    iniSiSo.Value,
+                    cmbGiaoVien.SelectedValue.ToString()
                 );
                 LopBUS.Instance.ThemLop(lop);
                 bindingNavigatorRefreshItem_Click(sender, e);
@@ -131,11 +150,6 @@ namespace QuanLyHocSinh
         {
             if (chkTimTheoMa.Checked) LopBUS.Instance.TimTheoMa(txtTimKiem.Text);
             else LopBUS.Instance.TimTheoTen(txtTimKiem.Text);
-        }
-
-        private void dgvLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

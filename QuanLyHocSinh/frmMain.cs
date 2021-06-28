@@ -18,6 +18,13 @@ namespace QuanLyHocSinh
             InitializeComponent();
         }
 
+        private void HienThiVersion()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+            Text += $" v.{ versionInfo.FileVersion }";
+        }
+
     
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -36,12 +43,14 @@ namespace QuanLyHocSinh
         private void btnKhoiLop_Click(object sender, EventArgs e) { Utilities.ShowForm("frmKhoiLop"); }
 
         private void btnHocKy_Click(object sender, EventArgs e) { Utilities.ShowForm("frmHocKy"); }
-
+        private void btnNamHoc_Click(object sender, EventArgs e) { Utilities.ShowForm("frmNamHoc"); }
 
         private void btnMonHoc_Click(object sender, EventArgs e) { Utilities.ShowForm("frmMonHoc"); }
         private void btnDiem_Click(object sender, EventArgs e) { Utilities.ShowForm("frmDiem"); }
 
         private void btnKetQua_Click(object sender, EventArgs e) { Utilities.ShowForm("frmKetQua"); }
+        private void btnHocLuc_Click(object sender, EventArgs e) { Utilities.ShowForm("frmHocLuc"); }
+        private void btnHanhKiem_Click(object sender, EventArgs e) { Utilities.ShowForm("frmHanhKiem"); }
 
         private void btnHocSinh_Click(object sender, EventArgs e) { Utilities.ShowForm("frmHocSinh"); }
         private void btnPhanLop_Click(object sender, EventArgs e) { Utilities.ShowForm("frmPhanLop"); }
@@ -238,11 +247,15 @@ namespace QuanLyHocSinh
             btnMonHoc.Enabled = false;
             btnDiem.Enabled = false;
             btnKetQua.Enabled = false;
+            btnHocLuc.Enabled = false;
+            btnHanhKiem.Enabled = false;
             btnHocSinh.Enabled = false;
             btnPhanLop.Enabled = false;
             btnTonGiao.Enabled = false;
             btnDanToc.Enabled = false;
             btnNgheNghiep.Enabled = false;
+            btnGiaoVien.Enabled = false;
+            btnPhanCong.Enabled = false;
 
             btnKQHSMonHoc.Enabled = false;
             btnKQHSCaNam.Enabled = false;
@@ -278,15 +291,20 @@ namespace QuanLyHocSinh
             btnLopHoc.Enabled = true;
             btnKhoiLop.Enabled = true;
             btnHocKy.Enabled = true;
+            btnNamHoc.Enabled = true;
             ribbonBarMonHoc.Enabled = true;
             btnMonHoc.Enabled = true;
             btnDiem.Enabled = true;
             btnKetQua.Enabled = true;
+            btnHocLuc.Enabled = true;
+            btnHanhKiem.Enabled = true;
             btnHocSinh.Enabled = true;
             btnPhanLop.Enabled = true;
             btnTonGiao.Enabled = true;
             btnDanToc.Enabled = true;
             btnNgheNghiep.Enabled = true;
+            btnGiaoVien.Enabled = true;
+            btnPhanCong.Enabled = true;
 
             btnKQHSMonHoc.Enabled = true;
             btnKQHSCaNam.Enabled = true;
@@ -333,12 +351,17 @@ namespace QuanLyHocSinh
             btnLopHoc.Enabled = false;
             btnKhoiLop.Enabled = false;
             btnHocKy.Enabled = false;
+            btnNamHoc.Enabled = false;
             btnKetQua.Enabled = false;
+            btnHocLuc.Enabled = false;
+            btnHanhKiem.Enabled = false;
             btnHocSinh.Enabled = false;
             btnPhanLop.Enabled = false;
             btnTonGiao.Enabled = false;
             btnDanToc.Enabled = false;
             btnNgheNghiep.Enabled = false;
+            btnGiaoVien.Enabled = false;
+            btnPhanCong.Enabled = false;
 
             btnSiSo.Enabled = false;
             btnDiemDat.Enabled = false;
@@ -360,7 +383,10 @@ namespace QuanLyHocSinh
             btnLopHoc.Enabled = true;
             btnKhoiLop.Enabled = true;
             btnHocKy.Enabled = true;
+            btnNamHoc.Enabled = true;
             btnKetQua.Enabled = true;
+            btnHocLuc.Enabled = true;
+            btnHanhKiem.Enabled = true;
             ribbonBarMonHoc.Enabled = true;
             btnMonHoc.Enabled = true;
             btnDiem.Enabled = true;
@@ -384,11 +410,13 @@ namespace QuanLyHocSinh
             btnSaoLuu.Enabled = false;
             btnPhucHoi.Enabled = false;
 
+            btnGiaoVien.Enabled = false;
+            btnPhanCong.Enabled = false;
+
             btnSiSo.Enabled = false;
             btnDiemDat.Enabled = false;
             btnDoTuoi.Enabled = false;
         }
         #endregion
-
     }
 }

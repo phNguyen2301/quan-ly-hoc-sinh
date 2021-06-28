@@ -18,12 +18,15 @@ namespace QuanLyHocSinh
 
         private void frmDiem_Load(object sender, EventArgs e)
         {
+            NamHocBUS.Instance.HienThiComboBox(cmbNamHoc);
             HocKyBUS.Instance.HienThiComboBox(cmbHocKy);
 
-            LopBUS.Instance.HienThiComboBox(cmbLop);
+            if (cmbNamHoc.SelectedValue != null)
+                LopBUS.Instance.HienThiComboBox(cmbNamHoc.SelectedValue.ToString(), cmbLop);
 
-            if (cmbLop.SelectedValue != null)
+            if (cmbNamHoc.SelectedValue != null && cmbLop.SelectedValue != null)
                 MonHocBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(), 
                     cmbLop.SelectedValue.ToString(), 
                     cmbMonHoc
                 );
@@ -67,7 +70,7 @@ namespace QuanLyHocSinh
                             string diemDaXuLy = chuoiDiem.Substring(j - count, count);
                             if (!string.IsNullOrWhiteSpace(diemDaXuLy) && QuyDinhBUS.Instance.KiemTraDiem(diemDaXuLy))
                             {
-                                DiemDTO diem = new DiemDTO(maHocSinh, maMonHoc, maHocKy, maLop, $"LD000{i + 1}",  float.Parse(diemDaXuLy));
+                                DiemDTO diem = new DiemDTO(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop, $"LD000{i + 1}",  float.Parse(diemDaXuLy));
                                 DiemBUS.Instance.ThemDiem(diem);
                             }
                             count = 0;
@@ -90,10 +93,10 @@ namespace QuanLyHocSinh
                 #region Lưu vào bảng kết quả
                 if (rowCount <= dgvDiem.Rows.Count)
                 {
-                    KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maMonHoc, maHocKy);
-                    KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop);
-                    KQLHMonHocBUS.Instance.LuuKetQua(maLop, maMonHoc, maHocKy);
-                    KQLHHocKyBUS.Instance.LuuKetQua(maLop, maHocKy);
+                    KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
+                    KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc);
+                    KQLHMonHocBUS.Instance.LuuKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
+                    KQLHHocKyBUS.Instance.LuuKetQua(maLop, maNamHoc, maHocKy);
                 }
                 #endregion
             }
@@ -115,10 +118,16 @@ namespace QuanLyHocSinh
             Close();
         }
 
+        private void btnThemNamHoc_Click(object sender, EventArgs e)
+        {
+            Utilities.ShowForm("frmNamHoc");
+            NamHocBUS.Instance.HienThiComboBox(cmbNamHoc);
+        }
+
         private void btnThemLop_Click(object sender, EventArgs e)
         {
             Utilities.ShowForm("frmLop");
-            LopBUS.Instance.HienThiComboBox(cmbLop);
+            LopBUS.Instance.HienThiComboBox(cmbNamHoc.SelectedValue.ToString(), cmbLop);
         }
 
         private void btnThemHocKy_Click(object sender, EventArgs e)
@@ -131,9 +140,18 @@ namespace QuanLyHocSinh
         {
             Utilities.ShowForm("frmMonHoc");
             MonHocBUS.Instance.HienThiComboBox(
+                cmbNamHoc.SelectedValue.ToString(), 
                 cmbLop.SelectedValue.ToString(), 
                 cmbMonHoc
             );
+        }
+
+        // Lấy thông tin lớp theo từng năm học
+        private void cmbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbNamHoc.SelectedValue != null)
+                LopBUS.Instance.HienThiComboBox(cmbNamHoc.SelectedValue.ToString(), cmbLop);
+            cmbLop.DataBindings.Clear();
         }
 
         // Lấy môn học theo từng lớp
@@ -141,6 +159,7 @@ namespace QuanLyHocSinh
         {
             if (cmbNamHoc.SelectedValue != null && cmbLop.SelectedValue != null)
                 MonHocBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(), 
                     cmbLop.SelectedValue.ToString(), 
                     cmbMonHoc
                 );
@@ -156,9 +175,10 @@ namespace QuanLyHocSinh
                 HocSinhBUS.Instance.HienThiHocSinhTheoLop(
                     bindingNavigatorDiem,
                     dgvDiem,
+                    cmbNamHoc.SelectedValue.ToString(), 
                     cmbLop.SelectedValue.ToString()
                 );
-            DiemBUS.Instance.HienThi(dgvDiem, cmbMonHoc, cmbHocKy, cmbLop, ref STT);
+            DiemBUS.Instance.HienThi(dgvDiem, cmbMonHoc, cmbHocKy, cmbNamHoc, cmbLop, ref STT);
         }
 
         internal void btnHienThiClicked(object sender, EventArgs e)

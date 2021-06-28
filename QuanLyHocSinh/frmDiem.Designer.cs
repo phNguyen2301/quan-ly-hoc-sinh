@@ -489,6 +489,17 @@
             this.btnThemHocKy.TabIndex = 6;
             this.btnThemHocKy.Click += new System.EventHandler(this.btnThemHocKy_Click);
             // 
+            // btnThemNamHoc
+            // 
+            this.btnThemNamHoc.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThemNamHoc.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThemNamHoc.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNamHoc.Image")));
+            this.btnThemNamHoc.Location = new System.Drawing.Point(230, 25);
+            this.btnThemNamHoc.Name = "btnThemNamHoc";
+            this.btnThemNamHoc.Size = new System.Drawing.Size(20, 20);
+            this.btnThemNamHoc.TabIndex = 2;
+            this.btnThemNamHoc.Click += new System.EventHandler(this.btnThemNamHoc_Click);
+            // 
             // btnThemLop
             // 
             this.btnThemLop.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -537,6 +548,18 @@
             this.cmbMonHoc.Name = "cmbMonHoc";
             this.cmbMonHoc.Size = new System.Drawing.Size(207, 20);
             this.cmbMonHoc.TabIndex = 7;
+            // 
+            // cmbNamHoc
+            // 
+            this.cmbNamHoc.DisplayMember = "Text";
+            this.cmbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbNamHoc.FormattingEnabled = true;
+            this.cmbNamHoc.ItemHeight = 14;
+            this.cmbNamHoc.Location = new System.Drawing.Point(17, 25);
+            this.cmbNamHoc.Name = "cmbNamHoc";
+            this.cmbNamHoc.Size = new System.Drawing.Size(207, 20);
+            this.cmbNamHoc.TabIndex = 1;
+            this.cmbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cmbNamHoc_SelectedIndexChanged);
             // 
             // cmbHocKy
             // 

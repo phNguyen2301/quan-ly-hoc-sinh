@@ -39,6 +39,10 @@
             this.btnSave = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.dgvMonHoc = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.colMaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHeSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigatorMonHoc = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,8 +57,6 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExitItem = new System.Windows.Forms.ToolStripButton();
-            this.colMaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctxMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
@@ -147,7 +149,9 @@
             this.dgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaMonHoc,
-            this.colTenMonHoc});
+            this.colTenMonHoc,
+            this.colSoTiet,
+            this.colHeSo});
             this.ctxMenu.SetContextMenuEx(this.dgvMonHoc, this.btnMenu);
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -164,6 +168,41 @@
             this.dgvMonHoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMonHoc.Size = new System.Drawing.Size(488, 364);
             this.dgvMonHoc.TabIndex = 3;
+            // 
+            // colMaMonHoc
+            // 
+            this.colMaMonHoc.DataPropertyName = "MaMonHoc";
+            this.colMaMonHoc.HeaderText = "Mã môn học";
+            this.colMaMonHoc.MaxInputLength = 6;
+            this.colMaMonHoc.Name = "colMaMonHoc";
+            this.colMaMonHoc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colTenMonHoc
+            // 
+            this.colTenMonHoc.DataPropertyName = "TenMonHoc";
+            this.colTenMonHoc.HeaderText = "Tên môn học";
+            this.colTenMonHoc.MaxInputLength = 30;
+            this.colTenMonHoc.Name = "colTenMonHoc";
+            this.colTenMonHoc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTenMonHoc.Width = 185;
+            // 
+            // colSoTiet
+            // 
+            this.colSoTiet.DataPropertyName = "SoTiet";
+            this.colSoTiet.HeaderText = "Số tiết";
+            this.colSoTiet.MaxInputLength = 3;
+            this.colSoTiet.Name = "colSoTiet";
+            this.colSoTiet.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSoTiet.Width = 80;
+            // 
+            // colHeSo
+            // 
+            this.colHeSo.DataPropertyName = "HeSo";
+            this.colHeSo.HeaderText = "Hệ số";
+            this.colHeSo.MaxInputLength = 1;
+            this.colHeSo.Name = "colHeSo";
+            this.colHeSo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colHeSo.Width = 80;
             // 
             // bindingNavigatorMonHoc
             // 
@@ -307,23 +346,6 @@
             this.bindingNavigatorExitItem.Text = "Thoát";
             this.bindingNavigatorExitItem.Click += new System.EventHandler(this.bindingNavigatorExitItem_Click);
             // 
-            // colMaMonHoc
-            // 
-            this.colMaMonHoc.DataPropertyName = "MaMonHoc";
-            this.colMaMonHoc.HeaderText = "Mã môn học";
-            this.colMaMonHoc.MaxInputLength = 6;
-            this.colMaMonHoc.Name = "colMaMonHoc";
-            this.colMaMonHoc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colTenMonHoc
-            // 
-            this.colTenMonHoc.DataPropertyName = "TenMonHoc";
-            this.colTenMonHoc.HeaderText = "Tên môn học";
-            this.colTenMonHoc.MaxInputLength = 30;
-            this.colTenMonHoc.Name = "colTenMonHoc";
-            this.colTenMonHoc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTenMonHoc.Width = 185;
-            // 
             // frmMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +382,10 @@
         private DevComponents.DotNetBar.ButtonItem btnDelete;
         private DevComponents.DotNetBar.ButtonItem btnSave;
         private DevComponents.DotNetBar.ButtonItem btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSoTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHeSo;
         private System.Windows.Forms.BindingNavigator bindingNavigatorMonHoc;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -375,8 +401,5 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorExitItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMonHoc;
     }
 }

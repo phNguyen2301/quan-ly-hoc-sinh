@@ -1,22 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {}
+    "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+    "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
+        "projectUniqueName": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
         "projectName": "BUS",
-        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
+        "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj"
+              "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
+                "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DAO\\DAO.csproj"
               },
-              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
               }
             }
           }
@@ -26,16 +26,16 @@
         "net472": {}
       }
     },
-    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
+    "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DAO\\DAO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
+        "projectUniqueName": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
         "projectName": "DAO",
-        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
+        "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DAO\\DAO.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
               }
             }
           }
@@ -45,24 +45,24 @@
         "net472": {}
       }
     },
-    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+    "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj",
+        "projectUniqueName": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+        "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {
+    "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+        "projectUniqueName": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
         "projectName": "QuanLyHocSinh",
-        "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+        "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
+        "outputPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -79,11 +79,11 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
-                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
+              "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+                "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
               },
-              "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+              "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
               }
             }
           }
@@ -92,9 +92,17 @@
       "frameworks": {
         "net472": {
           "dependencies": {
-            "Microsoft.Reporting.WinForms.v11": {
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[150.1427.0, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[14.0.1016.290, )"
+            },
+            "squirrel.windows": {
+              "target": "Package",
+              "version": "[2.0.1, )"
             }
           }
         }

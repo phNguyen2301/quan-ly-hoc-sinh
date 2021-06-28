@@ -21,20 +21,20 @@ namespace BUS
             private set => instance = value;
         }
 
-        public void LuuHocSinhVaoBangPhanLop(string maNamHoc, string khoiLop, string lop, ListViewEx listViewEx)
+        public void LuuHocSinhVaoBangPhanLop(string namHoc, string khoiLop, string lop, ListViewEx listViewEx)
         {
             foreach (ListViewItem item in listViewEx.Items)
             {
-                PhanLopDTO phanLop = new PhanLopDTO(maNamHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
+                PhanLopDTO phanLop = new PhanLopDTO(namHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
                 PhanLopDAO.Instance.LuuHocSinhVaoBangPhanLop(phanLop);
             }
         }
 
-        public void XoaHocSinhKhoiBangPhanLop(string maNamHoc, string khoiLop, string lop, ListViewEx listViewEx)
+        public void XoaHocSinhKhoiBangPhanLop(string namHoc, string khoiLop, string lop, ListViewEx listViewEx)
         {
             foreach (ListViewItem item in listViewEx.Items)
             {
-                PhanLopDTO phanLop = new PhanLopDTO(maNamHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
+                PhanLopDTO phanLop = new PhanLopDTO(namHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
                 PhanLopDAO.Instance.XoaHocSinhKhoiBangPhanLop(phanLop);
             }
         }

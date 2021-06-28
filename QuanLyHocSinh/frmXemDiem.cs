@@ -15,17 +15,21 @@ namespace QuanLyHocSinh
 
         private void frmXemDiem_Load(object sender, EventArgs e)
         {
+            NamHocBUS.Instance.HienThiComboBox(cmbNamHoc);
             HocKyBUS.Instance.HienThiComboBox(cmbHocKy);
 
-            LopBUS.Instance.HienThiComboBox(cmbLop);
+            if (cmbNamHoc.SelectedValue != null)
+                LopBUS.Instance.HienThiComboBox(cmbNamHoc.SelectedValue.ToString(), cmbLop);
 
-            if (cmbLop.SelectedValue != null)
+            if (cmbNamHoc.SelectedValue != null && cmbLop.SelectedValue != null)
             {
                 MonHocBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(), 
                     cmbLop.SelectedValue.ToString(), 
                     cmbMonHoc
                 );
                 HocSinhBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(), 
                     cmbLop.SelectedValue.ToString(), 
                     cmbHocSinh
                 );
@@ -54,10 +58,11 @@ namespace QuanLyHocSinh
             string maHocSinh = cmbHocSinh.SelectedValue.ToString();
             string maMonHoc = cmbMonHoc.SelectedValue.ToString();
             string maHocKy = cmbHocKy.SelectedValue.ToString();
+            string maNamHoc = cmbNamHoc.SelectedValue.ToString();
             string maLop = cmbLop.SelectedValue.ToString();
 
-            KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maMonHoc, maHocKy);
-            KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop);
+            KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
+            KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc);
 
             frmDiem frm = (frmDiem)Application.OpenForms["frmDiem"];
             if (frm != null) frm.btnHienThiClicked(sender, e);
@@ -68,15 +73,24 @@ namespace QuanLyHocSinh
             Close();
         }
 
+        private void cmbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbNamHoc.SelectedValue != null)
+                LopBUS.Instance.HienThiComboBox(cmbNamHoc.SelectedValue.ToString(), cmbLop);
+            cmbLop.DataBindings.Clear();
+        }
+
         private void cmbLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbLop.SelectedValue != null)
+            if (cmbNamHoc.SelectedValue != null && cmbLop.SelectedValue != null)
             {
                 MonHocBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(),
                     cmbLop.SelectedValue.ToString(),
                     cmbMonHoc
                 );
                 HocSinhBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(),
                     cmbLop.SelectedValue.ToString(),
                     cmbHocSinh
                 );
@@ -93,6 +107,7 @@ namespace QuanLyHocSinh
                 cmbHocSinh.SelectedValue.ToString(),
                 cmbMonHoc.SelectedValue.ToString(),
                 cmbHocKy.SelectedValue.ToString(),
+                cmbNamHoc.SelectedValue.ToString(),
                 cmbLop.SelectedValue.ToString()
             );
         }

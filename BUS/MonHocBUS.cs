@@ -37,10 +37,16 @@ namespace BUS
             comboBox.ValueMember = "MaMonHoc";
         }
 
-
-        public void HienThiComboBox(string lop, ComboBoxEx comboBox)
+        public void HienThiComboBox(string namHoc, ComboBoxEx comboBox)
         {
-            comboBox.DataSource = MonHocDAO.Instance.LayDanhSachMonHoc(lop);
+            comboBox.DataSource = MonHocDAO.Instance.LayDanhSachMonHoc(namHoc);
+            comboBox.DisplayMember = "TenMonHoc";
+            comboBox.ValueMember = "MaMonHoc";
+        }
+
+        public void HienThiComboBox(string namHoc, string lop, ComboBoxEx comboBox)
+        {
+            comboBox.DataSource = MonHocDAO.Instance.LayDanhSachMonHoc(namHoc, lop);
             comboBox.DisplayMember = "TenMonHoc";
             comboBox.ValueMember = "MaMonHoc";
         }

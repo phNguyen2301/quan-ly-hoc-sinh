@@ -48,7 +48,9 @@
             this.navPaneLeft = new DevComponents.DotNetBar.NavigationPane();
             this.navPanelNhapDuLieu = new DevComponents.DotNetBar.NavigationPanePanel();
             this.btnHienThiDanhSach = new DevComponents.DotNetBar.ButtonX();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbNamHoc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cmbHocKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cmbLop = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cmbHocSinh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -217,7 +219,7 @@
             this.btnThoat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.RightToLeftAutoMirrorImage = true;
-            this.btnThoat.Size = new System.Drawing.Size(57, 32);
+            this.btnThoat.Size = new System.Drawing.Size(58, 32);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.bindingNavigatorExitItem_Click);
             // 
@@ -262,7 +264,9 @@
             // 
             this.navPanelNhapDuLieu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.navPanelNhapDuLieu.Controls.Add(this.btnHienThiDanhSach);
+            this.navPanelNhapDuLieu.Controls.Add(this.label1);
             this.navPanelNhapDuLieu.Controls.Add(this.label3);
+            this.navPanelNhapDuLieu.Controls.Add(this.cmbNamHoc);
             this.navPanelNhapDuLieu.Controls.Add(this.cmbHocKy);
             this.navPanelNhapDuLieu.Controls.Add(this.cmbLop);
             this.navPanelNhapDuLieu.Controls.Add(this.cmbHocSinh);
@@ -295,6 +299,15 @@
             this.btnHienThiDanhSach.Text = "Hiển thị danh sách";
             this.btnHienThiDanhSach.Click += new System.EventHandler(this.btnHienThiDanhSach_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Năm học:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -303,6 +316,18 @@
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Lớp:";
+            // 
+            // cmbNamHoc
+            // 
+            this.cmbNamHoc.DisplayMember = "Text";
+            this.cmbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbNamHoc.FormattingEnabled = true;
+            this.cmbNamHoc.ItemHeight = 14;
+            this.cmbNamHoc.Location = new System.Drawing.Point(17, 25);
+            this.cmbNamHoc.Name = "cmbNamHoc";
+            this.cmbNamHoc.Size = new System.Drawing.Size(233, 20);
+            this.cmbNamHoc.TabIndex = 1;
+            this.cmbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cmbNamHoc_SelectedIndexChanged);
             // 
             // cmbHocKy
             // 
@@ -423,6 +448,7 @@
         private DevComponents.DotNetBar.ButtonItem btnClose;
         private DevComponents.DotNetBar.ButtonX btnHienThiDanhSach;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbMonHoc;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -438,6 +464,7 @@
         private DevComponents.DotNetBar.ButtonItem buttonItemNhapDuLieu;
         private System.Windows.Forms.BindingNavigator bindingNavigatorXemDiem;
         private System.Windows.Forms.ToolStripButton btnXoa;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbNamHoc;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbHocKy;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbLop;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbHocSinh;

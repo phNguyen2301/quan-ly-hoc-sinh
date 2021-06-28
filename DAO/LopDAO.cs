@@ -26,10 +26,15 @@ namespace DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-
-        public DataTable LayDanhSachLop(string khoiLop)
+        public DataTable LayDanhSachLop(string namHoc)
         {
-            string query = $"SELECT * FROM LOP WHERE MaKhoiLop = '{khoiLop}'";
+            string query = $"SELECT * FROM LOP WHERE MaNamHoc = '{namHoc}'";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable LayDanhSachLop(string khoiLop, string namHoc)
+        {
+            string query = $"SELECT * FROM LOP WHERE MaKhoiLop = '{khoiLop}' AND MaNamHoc = '{namHoc}'";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -47,9 +52,9 @@ namespace DAO
 
         public void ThemLop(LopDTO lop)
         {
-            string query = "EXEC ThemLop @maLop , @tenLop , @maKhoiLop , @maNamHoc , @siSo";
+            string query = "EXEC ThemLop @maLop , @tenLop , @maKhoiLop , @maNamHoc , @siSo , @maGiaoVien";
             object[] parameters = new object[] { 
-                lop.MaLop, lop.TenLop, lop.MaKhoiLop, lop.MaNamHoc, lop.SiSo
+                lop.MaLop, lop.TenLop, lop.MaKhoiLop, lop.MaNamHoc, lop.SiSo, lop.MaGiaoVien 
             };
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
         }

@@ -16,6 +16,8 @@ namespace QuanLyHocSinh
 
         private void frmPhanLop_Load(object sender, EventArgs e)
         {
+            NamHocBUS.Instance.HienThiComboBox(cmbNamHocCu);
+            NamHocBUS.Instance.HienThiComboBox(cmbNamHocMoi);
             KhoiLopBUS.Instance.HienThiComboBox(cmbKhoiLopCu);
 
             cmbKhoiLopCu_SelectedIndexChanged(sender, e);
@@ -39,9 +41,9 @@ namespace QuanLyHocSinh
 
         private void cmbKhoiLopCu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbKhoiLopCu.SelectedValue != null)
+            if (cmbNamHocCu.SelectedValue != null && cmbKhoiLopCu.SelectedValue != null)
             {
-                LopBUS.Instance.HienThiComboBox(cmbLopCu);
+                LopBUS.Instance.HienThiComboBox(cmbKhoiLopCu.SelectedValue.ToString(), cmbNamHocCu.SelectedValue.ToString(), cmbLopCu);
                 KhoiLopBUS.Instance.HienThiComboBox(cmbKhoiLopCu.SelectedValue.ToString(), cmbKhoiLopMoi);
                 cmbLopCu.DataBindings.Clear();
                 lvLopCu.Items.Clear();
@@ -50,9 +52,9 @@ namespace QuanLyHocSinh
 
         private void cmbKhoiLopMoi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbKhoiLopMoi.SelectedValue != null)
+            if (cmbNamHocMoi.SelectedValue != null && cmbKhoiLopMoi.SelectedValue != null)
             {
-                LopBUS.Instance.HienThiComboBox(cmbKhoiLopMoi.SelectedValue.ToString(), cmbLopMoi);
+                LopBUS.Instance.HienThiComboBox(cmbKhoiLopMoi.SelectedValue.ToString(), cmbNamHocMoi.SelectedValue.ToString(), cmbLopMoi);
                 cmbLopMoi.DataBindings.Clear();
                 lvLopMoi.Items.Clear();
             }

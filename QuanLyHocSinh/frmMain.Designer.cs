@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControl = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanelQuanLy = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBarGiaoVien = new DevComponents.DotNetBar.RibbonBar();
+            this.btnGiaoVien = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPhanCong = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBarHocSinh = new DevComponents.DotNetBar.RibbonBar();
             this.btnHocSinh = new DevComponents.DotNetBar.ButtonItem();
             this.btnPhanLop = new DevComponents.DotNetBar.ButtonItem();
@@ -41,11 +44,13 @@
             this.ribbonBarKetQua = new DevComponents.DotNetBar.RibbonBar();
             this.btnKetQua = new DevComponents.DotNetBar.ButtonItem();
             this.btnHocLuc = new DevComponents.DotNetBar.ButtonItem();
+            this.btnHanhKiem = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBarMonHoc = new DevComponents.DotNetBar.RibbonBar();
             this.btnMonHoc = new DevComponents.DotNetBar.ButtonItem();
             this.btnDiem = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBarNamHoc = new DevComponents.DotNetBar.RibbonBar();
             this.btnHocKy = new DevComponents.DotNetBar.ButtonItem();
+            this.btnNamHoc = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBarLop = new DevComponents.DotNetBar.RibbonBar();
             this.btnLopHoc = new DevComponents.DotNetBar.ButtonItem();
             this.btnKhoiLop = new DevComponents.DotNetBar.ButtonItem();
@@ -79,7 +84,6 @@
             this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem = new DevComponents.DotNetBar.QatCustomizeItem();
             this.ribbonTabItemGroup = new DevComponents.DotNetBar.RibbonTabItemGroup();
-            this.btnNamHoc = new DevComponents.DotNetBar.ButtonItem();
             this.bottomBar = new DevComponents.DotNetBar.Bar();
             this.lblTenNguoiDung = new DevComponents.DotNetBar.LabelX();
             this.lblNguoiDung = new DevComponents.DotNetBar.LabelX();
@@ -125,7 +129,7 @@
             this.ribbonControl.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonFile,
             this.qatCustomizeItem});
-            this.ribbonControl.Size = new System.Drawing.Size(1461, 147);
+            this.ribbonControl.Size = new System.Drawing.Size(1461, 181);
             this.ribbonControl.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonControl.SystemText.MaximizeRibbonText = "Cực &đại menu Ribbon";
             this.ribbonControl.SystemText.MinimizeRibbonText = "Cực &tiểu menu Ribbon";
@@ -151,6 +155,7 @@
             // ribbonPanelQuanLy
             // 
             this.ribbonPanelQuanLy.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanelQuanLy.Controls.Add(this.ribbonBarGiaoVien);
             this.ribbonPanelQuanLy.Controls.Add(this.ribbonBarHocSinh);
             this.ribbonPanelQuanLy.Controls.Add(this.ribbonBarKetQua);
             this.ribbonPanelQuanLy.Controls.Add(this.ribbonBarMonHoc);
@@ -160,8 +165,46 @@
             this.ribbonPanelQuanLy.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanelQuanLy.Name = "ribbonPanelQuanLy";
             this.ribbonPanelQuanLy.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanelQuanLy.Size = new System.Drawing.Size(1461, 89);
+            this.ribbonPanelQuanLy.Size = new System.Drawing.Size(1461, 123);
             this.ribbonPanelQuanLy.TabIndex = 1;
+            // 
+            // ribbonBarGiaoVien
+            // 
+            this.ribbonBarGiaoVien.AutoOverflowEnabled = true;
+            this.ribbonBarGiaoVien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBarGiaoVien.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnGiaoVien,
+            this.btnPhanCong});
+            this.ribbonBarGiaoVien.Location = new System.Drawing.Point(964, 0);
+            this.ribbonBarGiaoVien.Name = "ribbonBarGiaoVien";
+            this.ribbonBarGiaoVien.Size = new System.Drawing.Size(170, 120);
+            this.ribbonBarGiaoVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonBarGiaoVien.TabIndex = 6;
+            this.ribbonBarGiaoVien.Text = "Giáo Viên";
+            // 
+            // btnGiaoVien
+            // 
+            this.btnGiaoVien.Image = global::QuanLyHocSinh.Properties.Resources.giao_vien;
+            this.btnGiaoVien.ImagePaddingHorizontal = 8;
+            this.btnGiaoVien.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnGiaoVien.Name = "btnGiaoVien";
+            this.btnGiaoVien.RibbonWordWrap = false;
+            this.btnGiaoVien.SplitButton = true;
+            this.btnGiaoVien.Text = "Giáo viên";
+            this.btnGiaoVien.Tooltip = "Giáo viên";
+            this.btnGiaoVien.Click += new System.EventHandler(this.btnGiaoVien_Click);
+            // 
+            // btnPhanCong
+            // 
+            this.btnPhanCong.Image = global::QuanLyHocSinh.Properties.Resources.phan_cong;
+            this.btnPhanCong.ImagePaddingHorizontal = 8;
+            this.btnPhanCong.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnPhanCong.Name = "btnPhanCong";
+            this.btnPhanCong.RibbonWordWrap = false;
+            this.btnPhanCong.SplitButton = true;
+            this.btnPhanCong.Text = "Phân công";
+            this.btnPhanCong.Tooltip = "Phân công";
+            this.btnPhanCong.Click += new System.EventHandler(this.btnPhanCong_Click);
             // 
             // ribbonBarHocSinh
             // 
@@ -171,9 +214,9 @@
             this.btnHocSinh,
             this.btnPhanLop,
             this.itemContainerDanTocTonGiao});
-            this.ribbonBarHocSinh.Location = new System.Drawing.Point(325, 0);
+            this.ribbonBarHocSinh.Location = new System.Drawing.Point(682, 0);
             this.ribbonBarHocSinh.Name = "ribbonBarHocSinh";
-            this.ribbonBarHocSinh.Size = new System.Drawing.Size(202, 86);
+            this.ribbonBarHocSinh.Size = new System.Drawing.Size(282, 120);
             this.ribbonBarHocSinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarHocSinh.TabIndex = 5;
             this.ribbonBarHocSinh.Text = "Học Sinh";
@@ -250,10 +293,12 @@
             this.ribbonBarKetQua.AutoOverflowEnabled = true;
             this.ribbonBarKetQua.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBarKetQua.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnKetQua});
-            this.ribbonBarKetQua.Location = new System.Drawing.Point(271, 0);
+            this.btnKetQua,
+            this.btnHocLuc,
+            this.btnHanhKiem});
+            this.ribbonBarKetQua.Location = new System.Drawing.Point(457, 0);
             this.ribbonBarKetQua.Name = "ribbonBarKetQua";
-            this.ribbonBarKetQua.Size = new System.Drawing.Size(54, 86);
+            this.ribbonBarKetQua.Size = new System.Drawing.Size(225, 120);
             this.ribbonBarKetQua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarKetQua.TabIndex = 4;
             this.ribbonBarKetQua.Text = "Kết Quả";
@@ -272,8 +317,27 @@
             // 
             // btnHocLuc
             // 
+            this.btnHocLuc.Image = global::QuanLyHocSinh.Properties.Resources.hoc_luc;
             this.btnHocLuc.ImagePaddingHorizontal = 8;
+            this.btnHocLuc.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnHocLuc.Name = "btnHocLuc";
+            this.btnHocLuc.RibbonWordWrap = false;
+            this.btnHocLuc.SplitButton = true;
+            this.btnHocLuc.Text = "Học lực";
+            this.btnHocLuc.Tooltip = "Học lực";
+            this.btnHocLuc.Click += new System.EventHandler(this.btnHocLuc_Click);
+            // 
+            // btnHanhKiem
+            // 
+            this.btnHanhKiem.Image = global::QuanLyHocSinh.Properties.Resources.hanh_kiem;
+            this.btnHanhKiem.ImagePaddingHorizontal = 8;
+            this.btnHanhKiem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnHanhKiem.Name = "btnHanhKiem";
+            this.btnHanhKiem.RibbonWordWrap = false;
+            this.btnHanhKiem.SplitButton = true;
+            this.btnHanhKiem.Text = "Hạnh kiểm";
+            this.btnHanhKiem.Tooltip = "Hạnh kiểm";
+            this.btnHanhKiem.Click += new System.EventHandler(this.btnHanhKiem_Click);
             // 
             // ribbonBarMonHoc
             // 
@@ -282,9 +346,9 @@
             this.ribbonBarMonHoc.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnMonHoc,
             this.btnDiem});
-            this.ribbonBarMonHoc.Location = new System.Drawing.Point(164, 0);
+            this.ribbonBarMonHoc.Location = new System.Drawing.Point(306, 0);
             this.ribbonBarMonHoc.Name = "ribbonBarMonHoc";
-            this.ribbonBarMonHoc.Size = new System.Drawing.Size(107, 86);
+            this.ribbonBarMonHoc.Size = new System.Drawing.Size(151, 120);
             this.ribbonBarMonHoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.superTooltip.SetSuperTooltip(this.ribbonBarMonHoc, new DevComponents.DotNetBar.SuperTooltipInfo("Nhập điểm riêng cho từng học sinh", "Nhấn F1 để biết thêm thông tin về quy trình nhập điểm.", "Chức năng này được mở rộng giúp cho người dùng có thể nhập điểm riêng cho từng họ" +
             "c sinh trong lớp học.", null, global::QuanLyHocSinh.Properties.Resources.help, DevComponents.DotNetBar.eTooltipColor.Office2003));
@@ -320,10 +384,11 @@
             this.ribbonBarNamHoc.AutoOverflowEnabled = true;
             this.ribbonBarNamHoc.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBarNamHoc.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnHocKy});
-            this.ribbonBarNamHoc.Location = new System.Drawing.Point(111, 0);
+            this.btnHocKy,
+            this.btnNamHoc});
+            this.ribbonBarNamHoc.Location = new System.Drawing.Point(154, 0);
             this.ribbonBarNamHoc.Name = "ribbonBarNamHoc";
-            this.ribbonBarNamHoc.Size = new System.Drawing.Size(53, 86);
+            this.ribbonBarNamHoc.Size = new System.Drawing.Size(152, 120);
             this.ribbonBarNamHoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarNamHoc.TabIndex = 2;
             this.ribbonBarNamHoc.Text = "Năm Học";
@@ -340,6 +405,18 @@
             this.btnHocKy.Tooltip = "Học kỳ";
             this.btnHocKy.Click += new System.EventHandler(this.btnHocKy_Click);
             // 
+            // btnNamHoc
+            // 
+            this.btnNamHoc.Image = global::QuanLyHocSinh.Properties.Resources.nam_hoc;
+            this.btnNamHoc.ImagePaddingHorizontal = 8;
+            this.btnNamHoc.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnNamHoc.Name = "btnNamHoc";
+            this.btnNamHoc.RibbonWordWrap = false;
+            this.btnNamHoc.SplitButton = true;
+            this.btnNamHoc.Text = "Năm học";
+            this.btnNamHoc.Tooltip = "Năm học";
+            this.btnNamHoc.Click += new System.EventHandler(this.btnNamHoc_Click);
+            // 
             // ribbonBarLop
             // 
             this.ribbonBarLop.AutoOverflowEnabled = true;
@@ -349,7 +426,7 @@
             this.btnKhoiLop});
             this.ribbonBarLop.Location = new System.Drawing.Point(3, 0);
             this.ribbonBarLop.Name = "ribbonBarLop";
-            this.ribbonBarLop.Size = new System.Drawing.Size(108, 86);
+            this.ribbonBarLop.Size = new System.Drawing.Size(151, 120);
             this.ribbonBarLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarLop.TabIndex = 1;
             this.ribbonBarLop.Text = "Lớp - Khối Lớp";
@@ -385,10 +462,10 @@
             this.ribbonPanelThongKe.Controls.Add(this.ribbonBarKQCuoiNam);
             this.ribbonPanelThongKe.Controls.Add(this.ribbonBarKQHocKy);
             this.ribbonPanelThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanelThongKe.Location = new System.Drawing.Point(0, 56);
+            this.ribbonPanelThongKe.Location = new System.Drawing.Point(0, 69);
             this.ribbonPanelThongKe.Name = "ribbonPanelThongKe";
             this.ribbonPanelThongKe.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanelThongKe.Size = new System.Drawing.Size(1461, 89);
+            this.ribbonPanelThongKe.Size = new System.Drawing.Size(2045, 109);
             this.ribbonPanelThongKe.TabIndex = 3;
             this.ribbonPanelThongKe.Visible = false;
             // 
@@ -399,9 +476,9 @@
             this.ribbonBarXuatDanhSach.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnDanhSachHocSinh,
             this.btnHoSoLopHoc});
-            this.ribbonBarXuatDanhSach.Location = new System.Drawing.Point(291, 0);
+            this.ribbonBarXuatDanhSach.Location = new System.Drawing.Point(406, 0);
             this.ribbonBarXuatDanhSach.Name = "ribbonBarXuatDanhSach";
-            this.ribbonBarXuatDanhSach.Size = new System.Drawing.Size(126, 86);
+            this.ribbonBarXuatDanhSach.Size = new System.Drawing.Size(177, 106);
             this.ribbonBarXuatDanhSach.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarXuatDanhSach.TabIndex = 3;
             this.ribbonBarXuatDanhSach.Text = "Xuất Danh Sách";
@@ -435,9 +512,9 @@
             this.ribbonBarKQCuoiNam.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnKQLHMonHoc,
             this.btnKQLHHocKy});
-            this.ribbonBarKQCuoiNam.Location = new System.Drawing.Point(137, 0);
+            this.ribbonBarKQCuoiNam.Location = new System.Drawing.Point(191, 0);
             this.ribbonBarKQCuoiNam.Name = "ribbonBarKQCuoiNam";
-            this.ribbonBarKQCuoiNam.Size = new System.Drawing.Size(154, 86);
+            this.ribbonBarKQCuoiNam.Size = new System.Drawing.Size(215, 106);
             this.ribbonBarKQCuoiNam.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarKQCuoiNam.TabIndex = 2;
             this.ribbonBarKQCuoiNam.Text = "Kết Quả Lớp Học";
@@ -473,7 +550,7 @@
             this.btnKQHSCaNam});
             this.ribbonBarKQHocKy.Location = new System.Drawing.Point(3, 0);
             this.ribbonBarKQHocKy.Name = "ribbonBarKQHocKy";
-            this.ribbonBarKQHocKy.Size = new System.Drawing.Size(134, 86);
+            this.ribbonBarKQHocKy.Size = new System.Drawing.Size(188, 106);
             this.ribbonBarKQHocKy.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarKQHocKy.TabIndex = 1;
             this.ribbonBarKQHocKy.Text = "Kết Quả Học Sinh";
@@ -505,10 +582,10 @@
             this.ribbonPanelQuyDinh.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanelQuyDinh.Controls.Add(this.ribbonBarQuyDinh);
             this.ribbonPanelQuyDinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanelQuyDinh.Location = new System.Drawing.Point(0, 56);
+            this.ribbonPanelQuyDinh.Location = new System.Drawing.Point(0, 69);
             this.ribbonPanelQuyDinh.Name = "ribbonPanelQuyDinh";
             this.ribbonPanelQuyDinh.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanelQuyDinh.Size = new System.Drawing.Size(1461, 89);
+            this.ribbonPanelQuyDinh.Size = new System.Drawing.Size(2045, 109);
             this.ribbonPanelQuyDinh.TabIndex = 3;
             this.ribbonPanelQuyDinh.Visible = false;
             // 
@@ -522,7 +599,7 @@
             this.btnDiemDat});
             this.ribbonBarQuyDinh.Location = new System.Drawing.Point(3, 0);
             this.ribbonBarQuyDinh.Name = "ribbonBarQuyDinh";
-            this.ribbonBarQuyDinh.Size = new System.Drawing.Size(185, 86);
+            this.ribbonBarQuyDinh.Size = new System.Drawing.Size(259, 106);
             this.ribbonBarQuyDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarQuyDinh.TabIndex = 1;
             this.ribbonBarQuyDinh.Text = "Quy Định Chung";
@@ -735,17 +812,6 @@
             this.ribbonTabItemGroup.Style.TextColor = System.Drawing.Color.Black;
             this.ribbonTabItemGroup.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
-            // btnNamHoc
-            // 
-            this.btnNamHoc.Image = global::QuanLyHocSinh.Properties.Resources.nam_hoc;
-            this.btnNamHoc.ImagePaddingHorizontal = 8;
-            this.btnNamHoc.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnNamHoc.Name = "btnNamHoc";
-            this.btnNamHoc.RibbonWordWrap = false;
-            this.btnNamHoc.SplitButton = true;
-            this.btnNamHoc.Text = "Năm học";
-            this.btnNamHoc.Tooltip = "Năm học";
-            // 
             // bottomBar
             // 
             this.bottomBar.AccessibleDescription = "DotNetBar Bar (bottomBar)";
@@ -775,9 +841,9 @@
             this.lblTenNguoiDung.BackColor = System.Drawing.Color.Transparent;
             this.lblTenNguoiDung.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNguoiDung.ForeColor = System.Drawing.Color.Red;
-            this.lblTenNguoiDung.Location = new System.Drawing.Point(155, 6);
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(217, 7);
             this.lblTenNguoiDung.Name = "lblTenNguoiDung";
-            this.lblTenNguoiDung.Size = new System.Drawing.Size(37, 16);
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(45, 19);
             this.lblTenNguoiDung.TabIndex = 0;
             this.lblTenNguoiDung.Text = "Khách";
             this.lblTenNguoiDung.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -788,9 +854,9 @@
             this.lblNguoiDung.BackColor = System.Drawing.Color.Transparent;
             this.lblNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNguoiDung.ForeColor = System.Drawing.Color.White;
-            this.lblNguoiDung.Location = new System.Drawing.Point(11, 5);
+            this.lblNguoiDung.Location = new System.Drawing.Point(15, 6);
             this.lblNguoiDung.Name = "lblNguoiDung";
-            this.lblNguoiDung.Size = new System.Drawing.Size(144, 15);
+            this.lblNguoiDung.Size = new System.Drawing.Size(179, 18);
             this.lblNguoiDung.TabIndex = 0;
             this.lblNguoiDung.Text = "Người dùng đang đăng nhập:";
             // 
@@ -802,14 +868,14 @@
             this.tabStrip.CloseButtonPosition = DevComponents.DotNetBar.eTabCloseButtonPosition.Right;
             this.tabStrip.CloseButtonVisible = false;
             this.tabStrip.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabStrip.Location = new System.Drawing.Point(4, 148);
+            this.tabStrip.Location = new System.Drawing.Point(4, 182);
             this.tabStrip.MaxMdiCaptionLength = 64;
             this.tabStrip.MdiForm = this;
             this.tabStrip.MdiTabbedDocuments = true;
             this.tabStrip.Name = "tabStrip";
             this.tabStrip.SelectedTab = null;
             this.tabStrip.SelectedTabFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabStrip.Size = new System.Drawing.Size(1461, 26);
+            this.tabStrip.Size = new System.Drawing.Size(1461, 32);
             this.tabStrip.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document;
             this.tabStrip.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Top;
             this.tabStrip.TabIndex = 1;
@@ -822,9 +888,9 @@
             this.mdiClient.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.hinh_nen;
             this.mdiClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mdiClient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mdiClient.Location = new System.Drawing.Point(4, 174);
+            this.mdiClient.Location = new System.Drawing.Point(4, 214);
             this.mdiClient.Name = "mdiClient";
-            this.mdiClient.Size = new System.Drawing.Size(1461, 678);
+            this.mdiClient.Size = new System.Drawing.Size(1461, 638);
             this.mdiClient.TabIndex = 2;
             // 
             // backupDialog
@@ -856,9 +922,9 @@
             this.ctxMenuMain.AntiAlias = true;
             this.ctxMenuMain.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnMenuMain});
-            this.ctxMenuMain.Location = new System.Drawing.Point(697, 427);
+            this.ctxMenuMain.Location = new System.Drawing.Point(976, 526);
             this.ctxMenuMain.Name = "ctxMenuMain";
-            this.ctxMenuMain.Size = new System.Drawing.Size(75, 25);
+            this.ctxMenuMain.Size = new System.Drawing.Size(105, 29);
             this.ctxMenuMain.Stretch = true;
             this.ctxMenuMain.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ctxMenuMain.TabIndex = 9;
@@ -916,7 +982,7 @@
             // 
             // frmMain
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(7, 16);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(243)))), ((int)(((byte)(250)))));
             this.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.hinh_nen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -985,12 +1051,16 @@
         private DevComponents.DotNetBar.ButtonItem btnDanToc;
         private DevComponents.DotNetBar.ButtonItem btnTonGiao;
         private DevComponents.DotNetBar.ButtonItem btnNgheNghiep;
+        private DevComponents.DotNetBar.RibbonBar ribbonBarGiaoVien;
+        private DevComponents.DotNetBar.ButtonItem btnGiaoVien;
+        private DevComponents.DotNetBar.ButtonItem btnPhanCong;
         private DevComponents.DotNetBar.ButtonItem btnSiSo;
         private DevComponents.DotNetBar.ButtonItem btnDiemDat;
         private DevComponents.DotNetBar.ButtonItem btnKQHSMonHoc;
         private DevComponents.DotNetBar.RibbonBar ribbonBarKQCuoiNam;
         private DevComponents.DotNetBar.TabStrip tabStrip;
         private DevComponents.DotNetBar.ButtonItem btnHocLuc;
+        private DevComponents.DotNetBar.ButtonItem btnHanhKiem;
         private DevComponents.DotNetBar.ItemContainer menuFileItems;
         private DevComponents.DotNetBar.ButtonItem btnDangNhap;
         private DevComponents.DotNetBar.ButtonItem btnDangXuat;

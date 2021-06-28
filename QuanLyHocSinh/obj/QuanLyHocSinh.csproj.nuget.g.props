@@ -15,4 +15,11 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)squirrel.windows\2.0.1\build\squirrel.windows.props" Condition="Exists('$(NuGetPackageRoot)squirrel.windows\2.0.1\build\squirrel.windows.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgsquirrel_windows Condition=" '$(Pkgsquirrel_windows)' == '' ">C:\Users\nguye\.nuget\packages\squirrel.windows\2.0.1</Pkgsquirrel_windows>
+    <PkgMicrosoft_SqlServer_Types Condition=" '$(PkgMicrosoft_SqlServer_Types)' == '' ">C:\Users\nguye\.nuget\packages\microsoft.sqlserver.types\14.0.1016.290</PkgMicrosoft_SqlServer_Types>
+  </PropertyGroup>
 </Project>

@@ -29,6 +29,8 @@ namespace QuanLyHocSinh
             string stt = Utilities.LaySTT(dgvMonHoc.Rows.Count + 1);
             dataRow["MaMonHoc"] = "MH" + stt;
             dataRow["TenMonHoc"] = "";
+            dataRow["SoTiet"] = 0;
+            dataRow["HeSo"] = 0;
 
             dataTable.Rows.Add(dataRow);
             bindingSource.MoveLast();
@@ -49,8 +51,9 @@ namespace QuanLyHocSinh
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            string[] colNames = { "colMaMonHoc", "colTenMonHoc"};
-            if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvMonHoc, colNames))
+            string[] colNames = { "colMaMonHoc", "colTenMonHoc", "colSoTiet" };
+            if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvMonHoc, colNames) &&
+                KiemTraTruocKhiLuu.KiemTraHeSo(dgvMonHoc, "colHeSo"))
             {
                 bindingNavigatorPositionItem.Focus();
                 BindingSource bindingSource = bindingNavigatorMonHoc.BindingSource;

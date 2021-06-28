@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "WhgSD9itwIZ39gB1DLXr5V1i4zzHUXHT3ZQ2B/fVzx0bNSab32qdMXQO81GG6ivwgvHD23fIrXzZhVl+FDoHmg==",
+  "dgSpecHash": "I7cCWFctjUEIFqhSVfl3FK9S9I11OkdTPp1CPsARa2iHXRqv8VtraI9Bjv0DR3buVJ0BnhSwBRAiA5E4pFIUAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nguye\\programing\\nmcnpm\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+  "projectFilePath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.reporting.winforms.v11\\1.0.0\\microsoft.reporting.winforms.v11.1.0.0.nupkg.sha512"
+    "C:\\Users\\nguye\\.nuget\\packages\\deltacompressiondotnet\\1.1.0\\deltacompressiondotnet.1.1.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\150.1427.0\\microsoft.reportingservices.reportviewercontrol.winforms.150.1427.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.sqlserver.types\\14.0.1016.290\\microsoft.sqlserver.types.14.0.1016.290.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\mono.cecil\\0.11.2\\mono.cecil.0.11.2.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\sharpcompress\\0.17.1\\sharpcompress.0.17.1.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\squirrel.windows\\2.0.1\\squirrel.windows.2.0.1.nupkg.sha512"
   ],
   "logs": []
 }
