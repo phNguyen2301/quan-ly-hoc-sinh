@@ -46,9 +46,9 @@ namespace QuanLyHocSinh
             dataRow["MaDanToc"] = "";
             dataRow["MaTonGiao"] = "";
             dataRow["HoTenCha"] = "";
-            dataRow["MaNNghiepCha"] = "";
+            dataRow["MaNgheCha"] = "";
             dataRow["HoTenMe"] = "";
-            dataRow["MaNNghiepMe"] = "";
+            dataRow["MaNgheMe"] = "";
             dataRow["Email"] = "";
 
             dataTable.Rows.Add(dataRow);
@@ -99,9 +99,9 @@ namespace QuanLyHocSinh
                 "colMaDanToc",
                 "colMaTonGiao",
                 "colHoTenCha",
-                "colMaNNghiepCha",
+                "colMaNgheCha",
                 "colHoTenMe",
-                "colMaNNghiepMe",
+                "colMaNgheMe",
                 "colEmail",
             };
             if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvHocSinh, colNames) &&

@@ -76,13 +76,13 @@ namespace BUS
             txtHoTenCha.DataBindings.Add("Text", bindingSource, "HoTenCha");
 
             cmbNgheNghiepCha.DataBindings.Clear();
-            cmbNgheNghiepCha.DataBindings.Add("SelectedValue", bindingSource, "MaNNghiepCha");
+            cmbNgheNghiepCha.DataBindings.Add("SelectedValue", bindingSource, "MaNgheCha");
 
             txtHoTenMe.DataBindings.Clear();
             txtHoTenMe.DataBindings.Add("Text", bindingSource, "HoTenMe");
 
             cmbNgheNghiepMe.DataBindings.Clear();
-            cmbNgheNghiepMe.DataBindings.Add("SelectedValue", bindingSource, "MaNNghiepMe");
+            cmbNgheNghiepMe.DataBindings.Add("SelectedValue", bindingSource, "MaNgheMe");
 
             txtEmail.DataBindings.Clear();
             txtEmail.DataBindings.Add("Text", bindingSource, "Email");
