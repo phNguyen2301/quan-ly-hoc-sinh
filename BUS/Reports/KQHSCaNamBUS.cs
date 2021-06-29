@@ -22,7 +22,7 @@ namespace BUS
             private set => instance = value;
         }
 
-        public void ThemKetQua(string maHocSinh, string maLop, string maNamHoc)
+        public void LuuKetQua(string maHocSinh, string maLop, string maNamHoc, bool first)
         {
             HocSinhDTO hocSinh = new HocSinhDTO();
             hocSinh.MaHocSinh = maHocSinh;
@@ -44,8 +44,8 @@ namespace BUS
 
             KetQuaDTO ketQua = new KetQuaDTO();
             ketQua.MaKetQua = diemTBCNChung < diemDat ? "KQ0004" : "KQ0001";
-
-            KQHSCaNamDAO.Instance.ThemKetQua(new KQHSCaNamDTO(
+            if (first) KQHSCaNamDAO.Instance.XoaKetQua(maLop,maNamHoc);
+            KQHSCaNamDAO.Instance.LuuKetQua(new KQHSCaNamDTO(
                 hocSinh,
                 lop,
                 namHoc,

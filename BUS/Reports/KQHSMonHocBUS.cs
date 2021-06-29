@@ -22,7 +22,7 @@ namespace BUS
             private set => instance = value;
         }
 
-        public void LuuKetQua(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
+        public void LuuKetQua(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy, bool first)
         {
             HocSinhDTO hocSinh = new HocSinhDTO();
             hocSinh.MaHocSinh = maHocSinh;
@@ -40,6 +40,7 @@ namespace BUS
             namHoc.MaNamHoc = maNamHoc;
 
             float[] DanhSachDiem = DiemBUS.Instance.LayDiemHK(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
+            if (first) KQHSMonHocDAO.Instance.XoaKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
             KQHSMonHocDAO.Instance.LuuKetQua(new KQHSMonHocDTO(
                 hocSinh,
                 lop,

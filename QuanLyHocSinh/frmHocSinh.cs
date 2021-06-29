@@ -16,6 +16,7 @@ namespace QuanLyHocSinh
 
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
+            LopBUS.Instance.HienThiComboBox(cmbLop);
             DanTocBUS.Instance.HienThiComboBox(cmbDanToc);
             TonGiaoBUS.Instance.HienThiComboBox(cmbTonGiao);
             NgheNghiepBUS.Instance.HienThiComboBox(cmbNgheNghiepCha);
@@ -75,6 +76,7 @@ namespace QuanLyHocSinh
                 cmbNgheNghiepMe,
                 txtEmail
             );
+
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -164,6 +166,7 @@ namespace QuanLyHocSinh
                 cmbDanToc.SelectedValue == null ||
                 cmbTonGiao.SelectedValue == null ||
                 cmbNgheNghiepCha.SelectedValue == null ||
+                cmbLop.SelectedValue == null ||
                 cmbNgheNghiepMe.SelectedValue == null)
                 MessageBox.Show(
                     "Giá trị của các ô không được rỗng !",
@@ -190,6 +193,8 @@ namespace QuanLyHocSinh
                         txtEmail.Text
                     );
                     HocSinhBUS.Instance.ThemHocSinh(hocSinh);
+
+                    PhanLopBUS.Instance.ThemHocSinhVaoLop(txtMaHocSinh.Text , cmbLop.SelectedValue.ToString());
                     bindingNavigatorRefreshItem_Click(sender, e);
                 }
                 else MessageBox.Show(
@@ -206,5 +211,6 @@ namespace QuanLyHocSinh
             if (chkTimTheoMa.Checked) HocSinhBUS.Instance.TimTheoMa(txtTimKiem.Text);
             else HocSinhBUS.Instance.TimTheoTen(txtTimKiem.Text);
         }
+
     }
 }

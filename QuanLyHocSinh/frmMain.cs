@@ -17,14 +17,6 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
         }
-
-        private void HienThiVersion()
-        {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
-            Text += $" v.{ versionInfo.FileVersion }";
-        }
-
     
 
         private void frmMain_Load(object sender, EventArgs e)

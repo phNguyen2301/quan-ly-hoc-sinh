@@ -26,7 +26,7 @@ namespace DAO
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 
-        public void ThemKetQua(KQHSCaNamDTO ketQua)
+        public void LuuKetQua(KQHSCaNamDTO ketQua)
         {
             string query = "EXEC ThemKQHSCaNam @maHocSinh , @maLop , @maNamHoc , @maHocLuc , @maHanhKiem , @maKetQua , @diemTBHK1 , @diemTBHK2 , @diemTBCN";
             object[] parameters = new object[] {
@@ -42,11 +42,13 @@ namespace DAO
             };
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
-
-        public void XoaKetQua(string maHocSinh, string maLop, string maNamHoc)
+        public void XoaKetQua(string maLop, string maNamHoc)
         {
-            string query = "EXEC XoaKQHSCaNam @maHocSinh , @maLop , @maNamHoc";
-            object[] parameters = new object[] { maHocSinh, maLop, maNamHoc };
+            string query = "EXEC XoaKQHSCaNam @maLop , @maNamHoc";
+            object[] parameters = new object[] {
+                maLop,
+                maNamHoc
+            };
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
     }

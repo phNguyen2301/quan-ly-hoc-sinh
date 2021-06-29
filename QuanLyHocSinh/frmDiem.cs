@@ -57,14 +57,13 @@ namespace QuanLyHocSinh
                         }
                     }
                 }
-                if (rowCount <= dgvDiem.Rows.Count)
-                {
-                    KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
-                    KQHSCaNamBUS.Instance.ThemKetQua(maHocSinh, maLop, maNamHoc);
-                    KQLHMonHocBUS.Instance.LuuKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
-                    KQLHHocKyBUS.Instance.LuuKetQua(maLop, maNamHoc, maHocKy);
-                }
+                KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy, rowCount==1);
+                KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, rowCount==1);
             }
+
+            KQLHMonHocBUS.Instance.LuuKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
+            KQLHHocKyBUS.Instance.LuuKetQua(maLop, maNamHoc, maHocKy);
+
             MessageBox.Show("Cập nhật thành công!", "COMPLETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnHienThiDanhSach_Click(sender, e);
 

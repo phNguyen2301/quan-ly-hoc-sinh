@@ -20,13 +20,18 @@ namespace BUS
             }
             private set => instance = value;
         }
-
+        public void ThemHocSinhVaoLop(string maHocSinh, string maLop)
+        {
+            PhanLopDAO.Instance.ThemHocSinhVaoLop(maHocSinh, maLop);
+            LopDAO.Instance.ThemSiSo(maLop);
+        }
         public void LuuHocSinhVaoBangPhanLop(string namHoc, string khoiLop, string lop, ListViewEx listViewEx)
         {
             foreach (ListViewItem item in listViewEx.Items)
             {
                 PhanLopDTO phanLop = new PhanLopDTO(namHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
                 PhanLopDAO.Instance.LuuHocSinhVaoBangPhanLop(phanLop);
+                LopDAO.Instance.ThemSiSo(lop);
             }
         }
 
@@ -36,6 +41,8 @@ namespace BUS
             {
                 PhanLopDTO phanLop = new PhanLopDTO(namHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
                 PhanLopDAO.Instance.XoaHocSinhKhoiBangPhanLop(phanLop);
+                LopDAO.Instance.BotSiSo(lop);
+
             }
         }
     }

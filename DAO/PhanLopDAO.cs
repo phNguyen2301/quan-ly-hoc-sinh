@@ -18,7 +18,14 @@ namespace DAO
             }
             private set => instance = value;
         }
-
+        public void ThemHocSinhVaoLop(string maHocSinh, string maLop)
+        {
+            string maNamHoc = "NH" + maLop.Substring(6);
+            string maKhoiLop = "KHOI" + maLop.Substring(3, 2);
+            string query = "EXEC LuuHocSinhVaoBangPhanLop @maNamHoc , @maKhoiLop , @maLop , @maHocSinh";
+            object[] parameters = new object[] { maNamHoc, maKhoiLop, maLop, maHocSinh };
+            DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
         public void LuuHocSinhVaoBangPhanLop(PhanLopDTO phanLop)
         {
             string query = "EXEC LuuHocSinhVaoBangPhanLop @maNamHoc , @maKhoiLop , @maLop , @maHocSinh";

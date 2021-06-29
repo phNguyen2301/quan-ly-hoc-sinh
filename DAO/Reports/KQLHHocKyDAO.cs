@@ -38,12 +38,13 @@ namespace DAO
             };
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
-
+        
         public void XoaKetQua(string maLop, string maNamHoc, string maHocKy)
         {
             string query = "EXEC XoaKQLHHocKy @maLop , @maNamHoc , @maHocKy";
             object[] parameters = new object[] { maLop, maNamHoc, maHocKy };
             DataProvider.Instance.ExecuteQuery(query, parameters);
         }
+
     }
 }

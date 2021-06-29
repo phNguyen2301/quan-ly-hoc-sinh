@@ -32,7 +32,6 @@ namespace BUS
             TextBoxX txtTenLop,
             ComboBoxEx cmbKhoiLop,
             ComboBoxEx cmbNamHoc,
-            IntegerInput iniSiSo,
             ComboBoxEx cmbGiaoVien)
         {
             bindingSource.DataSource = LopDAO.Instance.LayDanhSachLop();
@@ -50,9 +49,6 @@ namespace BUS
 
             cmbNamHoc.DataBindings.Clear();
             cmbNamHoc.DataBindings.Add("SelectedValue", bindingSource, "MaNamHoc");
-
-            iniSiSo.DataBindings.Clear();
-            iniSiSo.DataBindings.Add("Text", bindingSource, "SiSo");
 
             cmbGiaoVien.DataBindings.Clear();
             cmbGiaoVien.DataBindings.Add("SelectedValue", bindingSource, "MaGiaoVien");
