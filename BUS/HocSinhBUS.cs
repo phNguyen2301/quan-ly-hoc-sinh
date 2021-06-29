@@ -105,7 +105,7 @@ namespace BUS
 
         public void HienThiHocSinhTheoLop(string namHoc, string khoiLop, string lop, ListViewEx listViewEx)
         {
-            DataTable dataTable = HocSinhDAO.Instance.LayDanhSachHocSinhTheoLop(namHoc, khoiLop, lop);
+            DataTable dataTable = HocSinhDAO.Instance.LayDanhSachHocSinhTheoLop(namHoc, lop);
             listViewEx.Items.Clear();
 
             foreach (DataRow Row in dataTable.Rows)

@@ -60,6 +60,16 @@ namespace BUS
 
         public IList<KQHSCaNamDTO> Report(string maLop, string maNamHoc)
         {
+            //Sua
+            int count = 0;
+            DataTable dataTable1 = HocSinhDAO.Instance.LayDanhSachHocSinhTheoLop(maNamHoc, maLop);
+
+            foreach (DataRow row in dataTable1.Rows)
+            {
+                count++;
+                string maHocSinh = row["MaHocSinh"].ToString();
+                KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, count == 1);
+            }
             DataTable dataTable = KQHSCaNamDAO.Instance.Report(maLop, maNamHoc);
             IList<KQHSCaNamDTO> ilist = new List<KQHSCaNamDTO>();
 

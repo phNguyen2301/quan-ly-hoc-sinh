@@ -28,9 +28,45 @@ namespace QuanLyHocSinh
                     cmbLop.SelectedValue.ToString(), 
                     cmbMonHoc
                 );
+                HocSinhBUS.Instance.HienThiComboBox(
+                    cmbNamHoc.SelectedValue.ToString(), 
+                    cmbLop.SelectedValue.ToString(), 
+                    cmbHocSinh
+                );
             }
         }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(
+                    "Bạn có muốn xóa dòng này không ?", 
+                    "DELETE", 
+                    MessageBoxButtons.OKCancel, 
+                    MessageBoxIcon.Question
+                ) == DialogResult.OK)
+            {
+                IEnumerator iEnumerator = lvXemDiem.SelectedItems.GetEnumerator();
+                while (iEnumerator.MoveNext())
+                {
+                    ListViewItem item = (ListViewItem)iEnumerator.Current;
+                    int stt = Convert.ToInt32(item.SubItems[0].Text);
+                    DiemBUS.Instance.XoaDiem(stt);
+                    lvXemDiem.Items.Remove(item);
+                }
+            }
+
+            string maHocSinh = cmbHocSinh.SelectedValue.ToString();
+            string maMonHoc = cmbMonHoc.SelectedValue.ToString();
+            string maHocKy = cmbHocKy.SelectedValue.ToString();
+            string maNamHoc = cmbNamHoc.SelectedValue.ToString();
+            string maLop = cmbLop.SelectedValue.ToString();
+
+            KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy, false);
+            KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, false);
+
+            frmDiem frm = (frmDiem)Application.OpenForms["frmDiem"];
+            if (frm != null) frm.btnHienThiClicked(sender, e);
+        }
 
         private void bindingNavigatorExitItem_Click(object sender, EventArgs e)
         {
@@ -66,17 +102,14 @@ namespace QuanLyHocSinh
 
         private void btnHienThiDanhSach_Click(object sender, EventArgs e)
         {
-            if (cmbNamHoc.SelectedValue != null &&
-                cmbLop.SelectedValue != null &&
-                cmbHocKy.SelectedValue != null &&
-                cmbMonHoc.SelectedValue != null)
-                HocSinhBUS.Instance.HienThiHocSinhTheoLop(
-                    bindingNavigatorDiem,
-                    dgvDiem,
-                    cmbNamHoc.SelectedValue.ToString(),
-                    cmbLop.SelectedValue.ToString()
-                );
-            DiemBUS.Instance.HienThi(dgvDiem, cmbMonHoc, cmbHocKy, cmbNamHoc, cmbLop);
+            DiemBUS.Instance.HienThiDanhSachXemDiem(
+                lvXemDiem,
+                cmbHocSinh.SelectedValue.ToString(),
+                cmbMonHoc.SelectedValue.ToString(),
+                cmbHocKy.SelectedValue.ToString(),
+                cmbNamHoc.SelectedValue.ToString(),
+                cmbLop.SelectedValue.ToString()
+            );
         }
 
         internal void btnHienThiClicked(object sender, EventArgs e)

@@ -57,6 +57,14 @@ namespace BUS
 
         public IList<KQHSMonHocDTO> Report(string maLop, string maNamHoc, string maMonHoc, string maHocKy)
         {
+            DataTable dataTable1 = HocSinhDAO.Instance.LayDanhSachHocSinhTheoLop(maNamHoc, maLop);
+            int count = 0;
+            foreach (DataRow row in dataTable1.Rows)
+            {
+                count++;
+                string maHocSinh = row["MaHocSinh"].ToString();
+                KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy, count == 1);
+            }
             DataTable dataTable = KQHSMonHocDAO.Instance.Report(maLop, maNamHoc, maMonHoc, maHocKy);
             IList<KQHSMonHocDTO> ilist = new List<KQHSMonHocDTO>();
 

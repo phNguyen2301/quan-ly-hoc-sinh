@@ -57,13 +57,10 @@ namespace QuanLyHocSinh
                         }
                     }
                 }
-                KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy, rowCount==1);
-                KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, rowCount==1);
             }
 
             KQLHMonHocBUS.Instance.LuuKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
             KQLHHocKyBUS.Instance.LuuKetQua(maLop, maNamHoc, maHocKy);
-
             MessageBox.Show("Cập nhật thành công!", "COMPLETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnHienThiDanhSach_Click(sender, e);
 
