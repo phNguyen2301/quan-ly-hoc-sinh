@@ -22,13 +22,13 @@ namespace DAO
         public void ThemSiSo(string maLop)
         {
             string namHoc = maLop.Substring(6);
-            string query = $"EXEC ThemSiSo {maLop}, {namHoc}";
+            string query = $"EXEC ThemSiSo {maLop}";
             DataProvider.Instance.ExecuteQuery(query);
         }
         public void BotSiSo(string maLop)
         {
             string namHoc = maLop.Substring(6);
-            string query = $"EXEC BotSiSo {maLop}, {namHoc}";
+            string query = $"EXEC BotSiSo {maLop}";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
