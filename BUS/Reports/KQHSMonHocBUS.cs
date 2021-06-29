@@ -39,18 +39,18 @@ namespace BUS
             NamHocDTO namHoc = new NamHocDTO();
             namHoc.MaNamHoc = maNamHoc;
 
-            KQHSMonHocDAO.Instance.XoaKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
+            float[] DanhSachDiem = DiemBUS.Instance.LayDiemHK(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
             KQHSMonHocDAO.Instance.LuuKetQua(new KQHSMonHocDTO(
                 hocSinh,
                 lop,
                 namHoc,
                 monHoc,
                 hocKy,
-                DiemBUS.Instance.LayDiemMiengTB(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy),
-                DiemBUS.Instance.LayDiem15PhutTB(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy),
-                DiemBUS.Instance.LayDiem45PhutTB(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy),
-                DiemBUS.Instance.LayDiemThi(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy),
-                DiemBUS.Instance.LayDiemTBHKTheoMon(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy)
+                DanhSachDiem[0],
+                DanhSachDiem[1],
+                DanhSachDiem[2],
+                DanhSachDiem[3],
+                DanhSachDiem[4]
             ));
         }
 

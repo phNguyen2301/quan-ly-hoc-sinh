@@ -40,21 +40,29 @@ namespace QuanLyHocSinh
             string maNamHoc = cmbNamHoc.SelectedValue.ToString();
             string maMonHoc = cmbMonHoc.SelectedValue.ToString();
             string maHocKy = cmbHocKy.SelectedValue.ToString();
-
+            int rowCount = 0;
             foreach (DataGridViewRow row in dgvDiem.Rows)
             {
+                rowCount++;
                 string maHocSinh = row.Cells["colMaHocSinh"].Value.ToString();
 
                 for (int i = 0; i < colNames.Length; i++)
                 {
-                    string chuoiDiem = row.Cells[colNames[i]].Value.ToString();
+                    string Diem = row.Cells[colNames[i]].Value.ToString();
                     {
-                        if (!string.IsNullOrWhiteSpace(chuoiDiem))
+                        if (!string.IsNullOrWhiteSpace(Diem))
                         {
-                            DiemDTO diem = new DiemDTO(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop, $"LD000{i + 1}", chuoiDiem);
+                            DiemDTO diem = new DiemDTO(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop, $"LD000{i + 1}", float.Parse(Diem));
                             DiemBUS.Instance.UpdateDiem(diem);
                         }
                     }
+                }
+                if (rowCount <= dgvDiem.Rows.Count)
+                {
+                    KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
+                    KQHSCaNamBUS.Instance.ThemKetQua(maHocSinh, maLop, maNamHoc);
+                    KQLHMonHocBUS.Instance.LuuKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
+                    KQLHHocKyBUS.Instance.LuuKetQua(maLop, maNamHoc, maHocKy);
                 }
             }
             MessageBox.Show("Cập nhật thành công!", "COMPLETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -62,6 +70,7 @@ namespace QuanLyHocSinh
 
             frmXemDiem frm = (frmXemDiem)Application.OpenForms["frmXemDiem"];
             if (frm != null) frm.btnHienThiClicked(sender, e);
+
         }
 
         private void btnXemDiem_Click(object sender, EventArgs e)

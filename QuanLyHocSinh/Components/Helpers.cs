@@ -37,19 +37,15 @@ namespace QuanLyHocSinh
             {
                 foreach (string col in colNames)
                 {
-                    if (row.Cells[col].Value != null)
+                    if (row.Cells[col].Value == null)
                     {
-                        string str = row.Cells[col].Value.ToString();
-                        if (string.IsNullOrWhiteSpace(str))
-                        {
-                            MessageBox.Show(
-                                "Giá trị của ô không được rỗng !",
-                                "ERROR",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error
-                            );
-                            return false;
-                        }
+                        MessageBox.Show(
+                            "Giá trị của ô không được rỗng !",
+                            "ERROR",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return false;
                     }
                 }
             }
@@ -64,20 +60,17 @@ namespace QuanLyHocSinh
                 {
                     if (row.Cells[col].Value != null)
                     {
-                        string chuoiDiem = row.Cells[col].Value.ToString();
-                        string[] subs = chuoiDiem.Split(';');
-                        foreach (var sub in subs)
+                        string Diem = row.Cells[col].Value.ToString();
+
+                        if (!QuyDinhBUS.Instance.KiemTraDiem(Diem))
                         {
-                            if (!QuyDinhBUS.Instance.KiemTraDiem(sub))
-                            {
-                                MessageBox.Show(
-                                        $"Điểm của học sinh {row.Cells["colHoTen"].Value} không hợp lệ!",
-                                        "ERROR",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error
-                                    );
-                                return false;
-                            }
+                            MessageBox.Show(
+                                    $"Điểm của học sinh {row.Cells["colHoTen"].Value} không hợp lệ!",
+                                    "ERROR",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                );
+                            return false;
                         }
 
                     }
