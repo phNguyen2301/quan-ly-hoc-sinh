@@ -90,18 +90,20 @@ namespace BUS
 
         public bool KiemTraDiem(string diem)
         {
-            IList<string> gioiHanDiem = new List<string>();
-            float nacDiemTrongGioiHan = 0;
-
-            for (int i = 0; i <= 1010; i++)
+            if (diem == "")
             {
-                gioiHanDiem.Add(nacDiemTrongGioiHan.ToString());
-                nacDiemTrongGioiHan += 0.01F;
-                nacDiemTrongGioiHan = (float)Math.Round(nacDiemTrongGioiHan, 2);
+                return true;
             }
+            float f;
 
-            if (gioiHanDiem.Contains(diem)) return true;
-            else return false;
+            if (float.TryParse(diem, out f))
+            {
+                if (f <= 10 || f >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

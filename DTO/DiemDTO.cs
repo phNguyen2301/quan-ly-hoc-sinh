@@ -8,7 +8,7 @@
         private string maNamHoc; 
         private string maLop;
         private string maLoaiDiem;
-        private float diemSo;
+        private string diemSo;
 
         public DiemDTO(
             string maHocSinh, 
@@ -17,7 +17,7 @@
             string maNamHoc, 
             string maLop, 
             string maLoaiDiem, 
-            float diemSo)
+            string diemSo)
         {
             this.maHocSinh = maHocSinh;
             this.maMonHoc = maMonHoc;
@@ -34,7 +34,7 @@
         public string MaNamHoc { get => maNamHoc; set => maNamHoc = value; }
         public string MaLop { get => maLop; set => maLop = value; }
         public string MaLoaiDiem { get => maLoaiDiem; set => maLoaiDiem = value; }
-        public float DiemSo { get => diemSo; set => diemSo = value; }
+        public string DiemSo { get => diemSo; set => diemSo = value; }
 
     }
 }

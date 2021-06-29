@@ -42,7 +42,14 @@ namespace DAO
             };
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
         }
-
+        public void UpdateDiem(DiemDTO diem)
+        {
+            string query = "EXEC UpdateDiem @maHocSinh , @maMonHoc , @maHocKy , @maNamHoc , @maLop , @maLoaiDiem , @diemSo";
+            object[] parameters = new object[] {
+                diem.MaHocSinh, diem.MaMonHoc, diem.MaHocKy, diem.MaNamHoc, diem.MaLop, diem.MaLoaiDiem, diem.DiemSo
+            };
+            DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
         public void XoaDiem(int stt)
         {
             string query = "EXEC XoaDiem @STT";

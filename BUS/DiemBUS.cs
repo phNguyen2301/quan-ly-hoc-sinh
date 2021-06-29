@@ -28,10 +28,9 @@ namespace BUS
             ComboBoxEx cmbMonHoc, 
             ComboBoxEx cmbHocKy, 
             ComboBoxEx cmbNamHoc, 
-            ComboBoxEx cmbLop, 
-            ref int[,] STT)
+            ComboBoxEx cmbLop 
+            )
         {
-            STT = new int[60, 20];
             int countRowHocSinh = 0;
 
             foreach (DataGridViewRow rowHocSinh in dataGridViewX.Rows)
@@ -56,7 +55,6 @@ namespace BUS
                 foreach (DataRow rowDiem in dataTable.Rows)
                 {
                     countRowDiem++;
-                    STT[countRowHocSinh, countRowDiem] = int.Parse(rowDiem["STT"].ToString());
                     string loaiDiem = rowDiem["MaLoai"].ToString();
 
                     if (loaiDiem == "LD0001") diemMieng[soDiemMieng++] = rowDiem["Diem"].ToString();
@@ -87,7 +85,6 @@ namespace BUS
             {
                 ListViewItem item = new ListViewItem();
 
-                item.Text = row["STT"].ToString();
                 item.SubItems.Add(row["MaHocSinh"].ToString());
                 item.SubItems.Add(row["HoTen"].ToString());
                 item.SubItems.Add(row["TenMonHoc"].ToString());
@@ -284,6 +281,11 @@ namespace BUS
         public void ThemDiem(DiemDTO diem)
         {
             DiemDAO.Instance.ThemDiem(diem);
+        }
+
+        public void UpdateDiem(DiemDTO diem)
+        {
+            DiemDAO.Instance.UpdateDiem(diem);
         }
 
         public void XoaDiem(int stt)

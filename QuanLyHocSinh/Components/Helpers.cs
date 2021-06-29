@@ -65,33 +65,21 @@ namespace QuanLyHocSinh
                     if (row.Cells[col].Value != null)
                     {
                         string chuoiDiem = row.Cells[col].Value.ToString();
-                        int count = 0;
-
-                        for (int i = 0; i < chuoiDiem.Length; i++)
+                        string[] subs = chuoiDiem.Split(';');
+                        foreach (var sub in subs)
                         {
-                            if (chuoiDiem[i] != ';' && i != chuoiDiem.Length - 1) count++;
-                            else
+                            if (!QuyDinhBUS.Instance.KiemTraDiem(sub))
                             {
-                                if (i == chuoiDiem.Length - 1)
-                                {
-                                    i++;
-                                    count++;
-                                }
-
-                                string diemDaXuLy = chuoiDiem.Substring(i - count, count);
-                                if (count != 0 && !QuyDinhBUS.Instance.KiemTraDiem(diemDaXuLy))
-                                {
-                                    MessageBox.Show(
+                                MessageBox.Show(
                                         $"Điểm của học sinh {row.Cells["colHoTen"].Value} không hợp lệ!",
                                         "ERROR",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error
                                     );
-                                    return false;
-                                }
-                                count = 0;
+                                return false;
                             }
                         }
+
                     }
                 }
             }
