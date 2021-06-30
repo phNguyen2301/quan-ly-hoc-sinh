@@ -58,7 +58,6 @@ namespace QuanLyHocSinh
                     }
                 }
             }
-
             KQLHMonHocBUS.Instance.LuuKetQua(maLop, maNamHoc, maMonHoc, maHocKy);
             KQLHHocKyBUS.Instance.LuuKetQua(maLop, maNamHoc, maHocKy);
             MessageBox.Show("Cập nhật thành công!", "COMPLETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
