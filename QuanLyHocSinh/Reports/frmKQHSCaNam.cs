@@ -29,7 +29,6 @@ namespace QuanLyHocSinh
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            
             IList<ReportParameter> param = new List<ReportParameter>();
             param.Add(new ReportParameter("NgayLap", DateTime.Now.ToString("dd/MM/yyyy")));
             param.Add(new ReportParameter("NamHoc", cmbNamHoc.Text));

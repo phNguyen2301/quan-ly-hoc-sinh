@@ -44,6 +44,9 @@ namespace BUS
 
             KetQuaDTO ketQua = new KetQuaDTO();
             ketQua.MaKetQua = diemTBCNChung < diemDat ? "KQ0004" : "KQ0001";
+
+            float diemhk1 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK1");
+            float diemhk2 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK2");
             if (first) KQHSCaNamDAO.Instance.XoaKetQua(maLop,maNamHoc);
             KQHSCaNamDAO.Instance.LuuKetQua(new KQHSCaNamDTO(
                 hocSinh,
@@ -52,9 +55,9 @@ namespace BUS
                 hocLuc,
                 hanhKiem,
                 ketQua,
-                DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK1"),
-                DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK2"),
-                diemTBCNChung
+                diemhk1,
+                diemhk2,
+                (float)Math.Round((diemhk1+ diemhk2*2)/3)
             ));
         }
 
