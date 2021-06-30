@@ -43,7 +43,7 @@ namespace BUS
             float diemTBCNChung = DiemBUS.Instance.LayDiemTBCNChung(maHocSinh, maLop, maNamHoc);
 
             KetQuaDTO ketQua = new KetQuaDTO();
-            ketQua.MaKetQua = diemTBCNChung < diemDat ? "KQ0004" : "KQ0001";
+            ketQua.MaKetQua = (float)Math.Round((diemhk1 + diemhk2 * 2) / 3, 2) < diemDat ? "KQ0004" : "KQ0001";
 
             float diemhk1 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK1");
             float diemhk2 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK2");
