@@ -57,7 +57,7 @@ namespace BUS
                 ketQua,
                 diemhk1,
                 diemhk2,
-                (float)Math.Round((diemhk1+ diemhk2*2)/3)
+                (float)Math.Round((diemhk1+ diemhk2*2)/3, 2)
             ));
         }
 
