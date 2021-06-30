@@ -42,11 +42,12 @@ namespace BUS
             int diemDat = QuyDinhDAO.Instance.LayDiemDatQuyDinh();
             float diemTBCNChung = DiemBUS.Instance.LayDiemTBCNChung(maHocSinh, maLop, maNamHoc);
 
-            KetQuaDTO ketQua = new KetQuaDTO();
-            ketQua.MaKetQua = (float)Math.Round((diemhk1 + diemhk2 * 2) / 3, 2) < diemDat ? "KQ0004" : "KQ0001";
+            
 
             float diemhk1 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK1");
             float diemhk2 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK2");
+            KetQuaDTO ketQua = new KetQuaDTO();
+            ketQua.MaKetQua = (float)Math.Round((diemhk1 + diemhk2 * 2) / 3, 2) < diemDat ? "KQ0004" : "KQ0001";
             if (first) KQHSCaNamDAO.Instance.XoaKetQua(maLop,maNamHoc);
             KQHSCaNamDAO.Instance.LuuKetQua(new KQHSCaNamDTO(
                 hocSinh,
