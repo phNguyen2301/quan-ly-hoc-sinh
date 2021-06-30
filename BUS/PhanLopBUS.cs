@@ -31,8 +31,8 @@ namespace BUS
             {
                 PhanLopDTO phanLop = new PhanLopDTO(namHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
                 PhanLopDAO.Instance.LuuHocSinhVaoBangPhanLop(phanLop);
-                LopDAO.Instance.ThemSiSo(lop);
             }
+            LopDAO.Instance.ThemSiSo(lop);
         }
 
         public void XoaHocSinhKhoiBangPhanLop(string namHoc, string khoiLop, string lop, ListViewEx listViewEx)
@@ -41,9 +41,8 @@ namespace BUS
             {
                 PhanLopDTO phanLop = new PhanLopDTO(namHoc, khoiLop, lop, item.SubItems[0].Text.ToString());
                 PhanLopDAO.Instance.XoaHocSinhKhoiBangPhanLop(phanLop);
-                LopDAO.Instance.BotSiSo(lop);
-
             }
+            LopDAO.Instance.BotSiSo(lop);
         }
     }
 }

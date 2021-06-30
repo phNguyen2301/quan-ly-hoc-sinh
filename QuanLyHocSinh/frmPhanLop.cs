@@ -180,6 +180,7 @@ namespace QuanLyHocSinh
                     cmbLopMoi.SelectedValue.ToString(),
                     lvLopMoi
                 );
+     
                 MessageBox.Show("Đã lưu vào bảng phân lớp !", "COMPLETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else MessageBox.Show("Giá trị của các ô không được rỗng !", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
