@@ -148,19 +148,6 @@ namespace QuanLyHocSinh
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn xóa học sinh này khỏi lớp mới không ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                IEnumerator ie = lvLopMoi.SelectedItems.GetEnumerator();
-                while (ie.MoveNext())
-                {
-                    ListViewItem item = (ListViewItem)ie.Current;
-                    lvLopMoi.Items.Remove(item);
-                }
-            }
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             

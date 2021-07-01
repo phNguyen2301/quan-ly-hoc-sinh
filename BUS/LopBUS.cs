@@ -108,5 +108,41 @@ namespace BUS
         {
             bindingSource.DataSource = LopDAO.Instance.TimTheoTen(tenLop);
         }
+
+        public bool KiemTraSiSoKhiXoa(DataGridView dataGridView, string colSiSo)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (row.Cells[colSiSo].Value != null)
+                {
+                    try
+                    {
+                        int siSo = Convert.ToInt32(row.Cells[colSiSo].Value.ToString());
+                        if (!QuyDinhBUS.Instance.KiemTraSiSo(siSo))
+                        {
+                            MessageBox.Show(
+                                "Sỉ số không đúng quy định!",
+                                "ERROR",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                            );
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                            "Sỉ số phải là một số nguyên!",
+                            "ERROR",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+  
     }
 }

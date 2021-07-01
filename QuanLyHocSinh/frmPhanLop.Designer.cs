@@ -46,7 +46,6 @@
             this.panelConPhai = new System.Windows.Forms.Panel();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.btnChuyen = new DevComponents.DotNetBar.ButtonX();
             this.lvLopMoi = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.colMaHSMoi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -73,6 +72,7 @@
             // 
             this.splitContainerPhanLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerPhanLop.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerPhanLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainerPhanLop.Name = "splitContainerPhanLop";
             // 
             // splitContainerPhanLop.Panel1
@@ -83,8 +83,9 @@
             // 
             this.splitContainerPhanLop.Panel2.Controls.Add(this.lvLopMoi);
             this.splitContainerPhanLop.Panel2.Controls.Add(this.groupPanelLopMoi);
-            this.splitContainerPhanLop.Size = new System.Drawing.Size(794, 468);
-            this.splitContainerPhanLop.SplitterDistance = 430;
+            this.splitContainerPhanLop.Size = new System.Drawing.Size(1059, 576);
+            this.splitContainerPhanLop.SplitterDistance = 573;
+            this.splitContainerPhanLop.SplitterWidth = 5;
             this.splitContainerPhanLop.TabIndex = 0;
             // 
             // panelChaTrai
@@ -94,8 +95,9 @@
             this.panelChaTrai.Controls.Add(this.panelConPhai);
             this.panelChaTrai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChaTrai.Location = new System.Drawing.Point(0, 0);
+            this.panelChaTrai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelChaTrai.Name = "panelChaTrai";
-            this.panelChaTrai.Size = new System.Drawing.Size(430, 468);
+            this.panelChaTrai.Size = new System.Drawing.Size(573, 576);
             this.panelChaTrai.TabIndex = 0;
             // 
             // lvLopCu
@@ -109,9 +111,10 @@
             this.colHoTenCu});
             this.lvLopCu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvLopCu.FullRowSelect = true;
-            this.lvLopCu.Location = new System.Drawing.Point(0, 120);
+            this.lvLopCu.Location = new System.Drawing.Point(0, 148);
+            this.lvLopCu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvLopCu.Name = "lvLopCu";
-            this.lvLopCu.Size = new System.Drawing.Size(360, 348);
+            this.lvLopCu.Size = new System.Drawing.Size(480, 428);
             this.lvLopCu.SmallImageList = this.imageListPhanLop;
             this.lvLopCu.TabIndex = 2;
             this.lvLopCu.UseCompatibleStateImageBehavior = false;
@@ -138,8 +141,9 @@
             this.panelConTren.Controls.Add(this.groupPanelLopCu);
             this.panelConTren.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelConTren.Location = new System.Drawing.Point(0, 0);
+            this.panelConTren.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelConTren.Name = "panelConTren";
-            this.panelConTren.Size = new System.Drawing.Size(360, 120);
+            this.panelConTren.Size = new System.Drawing.Size(480, 148);
             this.panelConTren.TabIndex = 0;
             // 
             // groupPanelLopCu
@@ -154,8 +158,9 @@
             this.groupPanelLopCu.Controls.Add(this.labelX1);
             this.groupPanelLopCu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanelLopCu.Location = new System.Drawing.Point(0, 0);
+            this.groupPanelLopCu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanelLopCu.Name = "groupPanelLopCu";
-            this.groupPanelLopCu.Size = new System.Drawing.Size(360, 120);
+            this.groupPanelLopCu.Size = new System.Drawing.Size(480, 148);
             // 
             // 
             // 
@@ -185,9 +190,10 @@
             this.cmbLopCu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbLopCu.FormattingEnabled = true;
             this.cmbLopCu.ItemHeight = 14;
-            this.cmbLopCu.Location = new System.Drawing.Point(120, 70);
+            this.cmbLopCu.Location = new System.Drawing.Point(160, 86);
+            this.cmbLopCu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbLopCu.Name = "cmbLopCu";
-            this.cmbLopCu.Size = new System.Drawing.Size(121, 20);
+            this.cmbLopCu.Size = new System.Drawing.Size(160, 20);
             this.cmbLopCu.TabIndex = 3;
             this.cmbLopCu.SelectedIndexChanged += new System.EventHandler(this.cmbLopCu_SelectedIndexChanged);
             // 
@@ -197,9 +203,10 @@
             this.cmbKhoiLopCu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbKhoiLopCu.FormattingEnabled = true;
             this.cmbKhoiLopCu.ItemHeight = 14;
-            this.cmbKhoiLopCu.Location = new System.Drawing.Point(120, 40);
+            this.cmbKhoiLopCu.Location = new System.Drawing.Point(160, 49);
+            this.cmbKhoiLopCu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbKhoiLopCu.Name = "cmbKhoiLopCu";
-            this.cmbKhoiLopCu.Size = new System.Drawing.Size(121, 20);
+            this.cmbKhoiLopCu.Size = new System.Drawing.Size(160, 20);
             this.cmbKhoiLopCu.TabIndex = 2;
             this.cmbKhoiLopCu.SelectedIndexChanged += new System.EventHandler(this.cmbKhoiLopCu_SelectedIndexChanged);
             // 
@@ -209,36 +216,40 @@
             this.cmbNamHocCu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbNamHocCu.FormattingEnabled = true;
             this.cmbNamHocCu.ItemHeight = 14;
-            this.cmbNamHocCu.Location = new System.Drawing.Point(120, 10);
+            this.cmbNamHocCu.Location = new System.Drawing.Point(160, 12);
+            this.cmbNamHocCu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbNamHocCu.Name = "cmbNamHocCu";
-            this.cmbNamHocCu.Size = new System.Drawing.Size(121, 20);
+            this.cmbNamHocCu.Size = new System.Drawing.Size(160, 20);
             this.cmbNamHocCu.TabIndex = 1;
             this.cmbNamHocCu.SelectedIndexChanged += new System.EventHandler(this.cmbNamHocCu_SelectedIndexChanged);
             // 
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Location = new System.Drawing.Point(50, 70);
+            this.labelX3.Location = new System.Drawing.Point(67, 86);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(57, 19);
+            this.labelX3.Size = new System.Drawing.Size(76, 23);
             this.labelX3.TabIndex = 0;
             this.labelX3.Text = "Lớp:";
             // 
             // labelX2
             // 
             this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Location = new System.Drawing.Point(50, 40);
+            this.labelX2.Location = new System.Drawing.Point(67, 49);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(57, 23);
+            this.labelX2.Size = new System.Drawing.Size(76, 28);
             this.labelX2.TabIndex = 0;
             this.labelX2.Text = "Khối lớp:";
             // 
             // labelX1
             // 
             this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Location = new System.Drawing.Point(50, 10);
+            this.labelX1.Location = new System.Drawing.Point(67, 12);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(57, 20);
+            this.labelX1.Size = new System.Drawing.Size(76, 25);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Năm học:";
             // 
@@ -246,12 +257,12 @@
             // 
             this.panelConPhai.Controls.Add(this.btnThoat);
             this.panelConPhai.Controls.Add(this.btnLuu);
-            this.panelConPhai.Controls.Add(this.btnXoa);
             this.panelConPhai.Controls.Add(this.btnChuyen);
             this.panelConPhai.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelConPhai.Location = new System.Drawing.Point(360, 0);
+            this.panelConPhai.Location = new System.Drawing.Point(480, 0);
+            this.panelConPhai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelConPhai.Name = "panelConPhai";
-            this.panelConPhai.Size = new System.Drawing.Size(70, 468);
+            this.panelConPhai.Size = new System.Drawing.Size(93, 576);
             this.panelConPhai.TabIndex = 3;
             // 
             // btnThoat
@@ -259,9 +270,10 @@
             this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThoat.Image = global::QuanLyHocSinh.Properties.Resources.thoat_phan_lop;
-            this.btnThoat.Location = new System.Drawing.Point(9, 370);
+            this.btnThoat.Location = new System.Drawing.Point(12, 369);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(55, 55);
+            this.btnThoat.Size = new System.Drawing.Size(73, 68);
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Tooltip = "Đóng bảng phân lớp";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -271,33 +283,23 @@
             this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnLuu.Image = global::QuanLyHocSinh.Properties.Resources.luu_chuyen_lop;
-            this.btnLuu.Location = new System.Drawing.Point(9, 300);
+            this.btnLuu.Location = new System.Drawing.Point(12, 283);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(55, 55);
+            this.btnLuu.Size = new System.Drawing.Size(73, 68);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Tooltip = "Lưu bảng phân lớp";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXoa.Image = global::QuanLyHocSinh.Properties.Resources.xoa_chuyen_lop;
-            this.btnXoa.Location = new System.Drawing.Point(9, 230);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(55, 55);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Tooltip = "Xóa học sinh khỏi lớp mới";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnChuyen
             // 
             this.btnChuyen.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnChuyen.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnChuyen.Image = global::QuanLyHocSinh.Properties.Resources.chuyen_lop;
-            this.btnChuyen.Location = new System.Drawing.Point(9, 160);
+            this.btnChuyen.Location = new System.Drawing.Point(12, 197);
+            this.btnChuyen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChuyen.Name = "btnChuyen";
-            this.btnChuyen.Size = new System.Drawing.Size(55, 55);
+            this.btnChuyen.Size = new System.Drawing.Size(73, 68);
             this.btnChuyen.TabIndex = 1;
             this.btnChuyen.Tooltip = "Chuyển lớp";
             this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
@@ -313,9 +315,10 @@
             this.colHoTenMoi});
             this.lvLopMoi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvLopMoi.FullRowSelect = true;
-            this.lvLopMoi.Location = new System.Drawing.Point(0, 120);
+            this.lvLopMoi.Location = new System.Drawing.Point(0, 148);
+            this.lvLopMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvLopMoi.Name = "lvLopMoi";
-            this.lvLopMoi.Size = new System.Drawing.Size(360, 348);
+            this.lvLopMoi.Size = new System.Drawing.Size(481, 428);
             this.lvLopMoi.SmallImageList = this.imageListPhanLop;
             this.lvLopMoi.TabIndex = 5;
             this.lvLopMoi.UseCompatibleStateImageBehavior = false;
@@ -343,8 +346,9 @@
             this.groupPanelLopMoi.Controls.Add(this.labelX6);
             this.groupPanelLopMoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupPanelLopMoi.Location = new System.Drawing.Point(0, 0);
+            this.groupPanelLopMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanelLopMoi.Name = "groupPanelLopMoi";
-            this.groupPanelLopMoi.Size = new System.Drawing.Size(360, 120);
+            this.groupPanelLopMoi.Size = new System.Drawing.Size(481, 148);
             // 
             // 
             // 
@@ -374,18 +378,20 @@
             this.cmbLopMoi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbLopMoi.FormattingEnabled = true;
             this.cmbLopMoi.ItemHeight = 14;
-            this.cmbLopMoi.Location = new System.Drawing.Point(120, 70);
+            this.cmbLopMoi.Location = new System.Drawing.Point(160, 86);
+            this.cmbLopMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbLopMoi.Name = "cmbLopMoi";
-            this.cmbLopMoi.Size = new System.Drawing.Size(121, 20);
+            this.cmbLopMoi.Size = new System.Drawing.Size(160, 20);
             this.cmbLopMoi.TabIndex = 3;
             this.cmbLopMoi.SelectedIndexChanged += new System.EventHandler(this.cmbLopMoi_SelectedIndexChanged);
             // 
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Location = new System.Drawing.Point(50, 40);
+            this.labelX5.Location = new System.Drawing.Point(67, 49);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(57, 23);
+            this.labelX5.Size = new System.Drawing.Size(76, 28);
             this.labelX5.TabIndex = 0;
             this.labelX5.Text = "Khối lớp:";
             // 
@@ -395,18 +401,20 @@
             this.cmbKhoiLopMoi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbKhoiLopMoi.FormattingEnabled = true;
             this.cmbKhoiLopMoi.ItemHeight = 14;
-            this.cmbKhoiLopMoi.Location = new System.Drawing.Point(120, 40);
+            this.cmbKhoiLopMoi.Location = new System.Drawing.Point(160, 49);
+            this.cmbKhoiLopMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbKhoiLopMoi.Name = "cmbKhoiLopMoi";
-            this.cmbKhoiLopMoi.Size = new System.Drawing.Size(121, 20);
+            this.cmbKhoiLopMoi.Size = new System.Drawing.Size(160, 20);
             this.cmbKhoiLopMoi.TabIndex = 2;
             this.cmbKhoiLopMoi.SelectedIndexChanged += new System.EventHandler(this.cmbKhoiLopMoi_SelectedIndexChanged);
             // 
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Location = new System.Drawing.Point(50, 10);
+            this.labelX4.Location = new System.Drawing.Point(67, 12);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(57, 20);
+            this.labelX4.Size = new System.Drawing.Size(76, 25);
             this.labelX4.TabIndex = 0;
             this.labelX4.Text = "Năm học:";
             // 
@@ -416,29 +424,32 @@
             this.cmbNamHocMoi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbNamHocMoi.FormattingEnabled = true;
             this.cmbNamHocMoi.ItemHeight = 14;
-            this.cmbNamHocMoi.Location = new System.Drawing.Point(120, 10);
+            this.cmbNamHocMoi.Location = new System.Drawing.Point(160, 12);
+            this.cmbNamHocMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbNamHocMoi.Name = "cmbNamHocMoi";
-            this.cmbNamHocMoi.Size = new System.Drawing.Size(121, 20);
+            this.cmbNamHocMoi.Size = new System.Drawing.Size(160, 20);
             this.cmbNamHocMoi.TabIndex = 1;
             this.cmbNamHocMoi.SelectedIndexChanged += new System.EventHandler(this.cmbNamHocMoi_SelectedIndexChanged);
             // 
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Location = new System.Drawing.Point(50, 70);
+            this.labelX6.Location = new System.Drawing.Point(67, 86);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(57, 19);
+            this.labelX6.Size = new System.Drawing.Size(76, 23);
             this.labelX6.TabIndex = 0;
             this.labelX6.Text = "Lớp:";
             // 
             // frmPhanLop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 468);
+            this.ClientSize = new System.Drawing.Size(1059, 576);
             this.Controls.Add(this.splitContainerPhanLop);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPhanLop";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -482,7 +493,6 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.ButtonX btnLuu;
-        private DevComponents.DotNetBar.ButtonX btnXoa;
         private DevComponents.DotNetBar.ButtonX btnChuyen;
         private DevComponents.DotNetBar.ButtonX btnThoat;
         private System.Windows.Forms.ColumnHeader colMaHSCu;

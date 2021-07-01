@@ -21,7 +21,7 @@ namespace BUS
             }
             private set => instance = value;
         }
-
+         
         public void LuuKetQua(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy, bool first)
         {
             HocSinhDTO hocSinh = new HocSinhDTO();

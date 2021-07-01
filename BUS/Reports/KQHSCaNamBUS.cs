@@ -22,10 +22,9 @@ namespace BUS
             private set => instance = value;
         }
 
-        public void LuuKetQua(string maHocSinh, string maLop, string maNamHoc, bool first)
+        public void LuuKetQua(string maLop, string maNamHoc)
         {
-            HocSinhDTO hocSinh = new HocSinhDTO();
-            hocSinh.MaHocSinh = maHocSinh;
+            KQHSCaNamDAO.Instance.XoaKetQua(maLop, maNamHoc);
 
             LopDTO lop = new LopDTO();
             lop.MaLop = maLop;
@@ -33,47 +32,107 @@ namespace BUS
             NamHocDTO namHoc = new NamHocDTO();
             namHoc.MaNamHoc = maNamHoc;
 
-            HocLucDTO hocLuc = new HocLucDTO();
-            hocLuc.MaHocLuc = HocLucBUS.Instance.XepLoaiHocLucCaNam(maHocSinh, maLop, maNamHoc);
-
             HanhKiemDTO hanhKiem = new HanhKiemDTO();
             hanhKiem.MaHanhKiem = "HK0001";
 
             int diemDat = QuyDinhDAO.Instance.LayDiemDatQuyDinh();
-            float diemTBCNChung = DiemBUS.Instance.LayDiemTBCNChung(maHocSinh, maLop, maNamHoc);
 
+            DataTable DanhsachHocKy = HocKyDAO.Instance.LayDanhSachHocKy();
+            DataTable DanhSachHocSinh = HocSinhDAO.Instance.LayDanhSachHocSinhTheoLop(maNamHoc, maLop);
+            DataTable DanhSachMon = MonHocDAO.Instance.LayDanhSachMonHoc(maNamHoc, maLop);
+
+            // LayDiemTBCN
+            foreach (DataRow rhocSinh in DanhSachHocSinh.Rows)
+            {
+                string maHocSinh = rhocSinh["MaHocSinh"].ToString();
+                HocSinhDTO hocSinh = new HocSinhDTO();
+                hocSinh.MaHocSinh = maHocSinh;
+
+                //Lay diem HK1:
+                string maHocKy = "HK1";
+                float diemHK1 = 0;
+                float tongdiemChung = 0;
+                int tongheSoChung = 0;
+
+                foreach (DataRow rmon in DanhSachMon.Rows)
+                {
+                    string maMonHoc = rmon["MaMonHoc"].ToString();
+
+                    float diemTBMon = 0;
+                    float tongdiemMon = 0;
+                    int tongheSoMon = 0;
+
+                    DataTable DanhSachDiem = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
+                    foreach (DataRow row in DanhSachDiem.Rows)
+                    {
+                        float diem = Convert.ToSingle(row["Diem"].ToString());
+                        int heSo = Convert.ToInt32(row["HeSo"].ToString());
+                        tongdiemMon += diem * heSo;
+                        tongheSoMon += heSo;
+                    }
+                    
+                    if (tongheSoMon != 0) diemTBMon = (float)Math.Round(tongdiemMon / tongheSoMon, 2);
+                    int heSoMon = Convert.ToInt32(rmon["HeSo"].ToString());
+                    tongdiemChung += diemTBMon * heSoMon;
+                    tongheSoChung += heSoMon;
+                }
+                if (tongheSoChung != 0) diemHK1 = (float)Math.Round(tongdiemChung / tongheSoChung, 2);
+                int heSoHK1 = Convert.ToInt32(DanhsachHocKy.Rows[0]["HeSo"].ToString());
+                //Lay diem HK2:
+                maHocKy = "HK2";
+                float diemHK2 = 0;
+                tongdiemChung = 0;
+                tongheSoChung = 0;
+
+                foreach (DataRow rmon in DanhSachMon.Rows)
+                {
+                    string maMonHoc = rmon["MaMonHoc"].ToString();
+
+                    float diemTBMon = 0;
+                    float tongdiemMon = 0;
+                    int tongheSoMon = 0;
+
+                    DataTable DanhSachDiem = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
+                    foreach (DataRow row in DanhSachDiem.Rows)
+                    {
+                        float diem = Convert.ToSingle(row["Diem"].ToString());
+                        int heSo = Convert.ToInt32(row["HeSo"].ToString());
+                        tongdiemMon += diem * heSo;
+                        tongheSoMon += heSo;
+                    }
+
+                    if (tongheSoMon != 0) diemTBMon = (float)Math.Round(tongdiemMon / tongheSoMon, 2);
+                    int heSoMon = Convert.ToInt32(rmon["HeSo"].ToString());
+                    tongdiemChung += diemTBMon * heSoMon;
+                    tongheSoChung += heSoMon;
+                }
+                if (tongheSoChung != 0) diemHK2 = (float)Math.Round(tongdiemChung / tongheSoChung, 2);
+                int heSoHK2 = Convert.ToInt32(DanhsachHocKy.Rows[1]["HeSo"].ToString());
+                // Lay diem CN:
             
-
-            float diemhk1 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK1");
-            float diemhk2 = DiemBUS.Instance.LayDiemTBHKChung(maHocSinh, maLop, maNamHoc, "HK2");
-            KetQuaDTO ketQua = new KetQuaDTO();
-            ketQua.MaKetQua = (float)Math.Round((diemhk1 + diemhk2 * 2) / 3, 2) < diemDat ? "KQ0004" : "KQ0001";
-            if (first) KQHSCaNamDAO.Instance.XoaKetQua(maLop,maNamHoc);
-            KQHSCaNamDAO.Instance.LuuKetQua(new KQHSCaNamDTO(
+                float diemCN = (float)Math.Round((diemHK1 * heSoHK1 + diemHK2 * heSoHK2) / (heSoHK1 + heSoHK2), 2);
+                HocLucDTO hocLuc = new HocLucDTO();
+                hocLuc.MaHocLuc = diemCN < diemDat ? "HL0001" : "HL0004";
+                KetQuaDTO ketQua = new KetQuaDTO();
+                ketQua.MaKetQua = diemCN < diemDat ? "KQ0004" : "KQ0001";
+                KQHSCaNamDAO.Instance.LuuKetQua(new KQHSCaNamDTO(
                 hocSinh,
                 lop,
                 namHoc,
                 hocLuc,
                 hanhKiem,
                 ketQua,
-                diemhk1,
-                diemhk2,
-                (float)Math.Round((diemhk1+ diemhk2*2)/3, 2)
+                diemHK1,
+                diemHK2,
+                diemCN
             ));
+            }
         }
-
+   
         public IList<KQHSCaNamDTO> Report(string maLop, string maNamHoc)
         {
-            //Sua
-            int count = 0;
-            DataTable dataTable1 = HocSinhDAO.Instance.LayDanhSachHocSinhTheoLop(maNamHoc, maLop);
 
-            foreach (DataRow row in dataTable1.Rows)
-            {
-                count++;
-                string maHocSinh = row["MaHocSinh"].ToString();
-                KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, count == 1);
-            }
+            KQHSCaNamBUS.Instance.LuuKetQua(maLop, maNamHoc);
             DataTable dataTable = KQHSCaNamDAO.Instance.Report(maLop, maNamHoc);
             IList<KQHSCaNamDTO> ilist = new List<KQHSCaNamDTO>();
 
