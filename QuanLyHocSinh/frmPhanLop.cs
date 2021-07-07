@@ -84,6 +84,16 @@ namespace QuanLyHocSinh
 
         private void btnChuyen_Click(object sender, EventArgs e)
         {
+            if (cmbLopMoi.SelectedValue.ToString() == cmbLopCu.SelectedValue.ToString())
+            {
+                MessageBox.Show(
+                            $"Chuyển cùng lớp",
+                            "ERROR",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                return;
+            }
             IEnumerator ie = lvLopCu.SelectedItems.GetEnumerator();
             while (ie.MoveNext())
             {
@@ -95,12 +105,14 @@ namespace QuanLyHocSinh
                 {
                     if (item.SubItems[0].Text == olditem.SubItems[0].Text)
                     {
-                        MessageBox.Show(
-                            $"Học sinh {item.SubItems[1].Text} hiện đang học trong lớp {cmbLopMoi.Text}",
-                            "ERROR", 
-                            MessageBoxButtons.OK, 
-                            MessageBoxIcon.Error
-                        );
+
+                        newitem.SubItems.Add(olditem.SubItems[1].Text);
+                        newitem.Tag = olditem.Tag;
+
+                        lvLopMoi.Items.Add(newitem);
+                        lvLopMoi.Items[lvLopMoi.Items.IndexOf(newitem)].Text = olditem.SubItems[0].Text;
+                        lvLopCu.Items.Remove(olditem);
+
                         state = true;
                         break;
                     }
@@ -111,7 +123,7 @@ namespace QuanLyHocSinh
                 if (cmbNamHocMoi.SelectedValue != null)
                     dataTable = HocSinhBUS.Instance.LayDanhSachHocSinhTheoNamHoc(cmbNamHocMoi.SelectedValue.ToString());
 
-                foreach (DataRow row in dataTable.Rows)
+                /*foreach (DataRow row in dataTable.Rows)
                 {
                     if (olditem.SubItems[0].Text.ToString() == row["MaHocSinh"].ToString())
                     {
@@ -125,7 +137,7 @@ namespace QuanLyHocSinh
                         break;
                     }
                 }
-                if (state == true) break;
+                if (state == true) break;*/
 
                 newitem.SubItems.Add(olditem.SubItems[1].Text);
                 newitem.Tag = olditem.Tag;
@@ -136,21 +148,9 @@ namespace QuanLyHocSinh
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn xóa học sinh này khỏi lớp mới không ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                IEnumerator ie = lvLopMoi.SelectedItems.GetEnumerator();
-                while (ie.MoveNext())
-                {
-                    ListViewItem item = (ListViewItem)ie.Current;
-                    lvLopMoi.Items.Remove(item);
-                }
-            }
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            
             if (cmbNamHocCu.SelectedValue != null && cmbKhoiLopCu.SelectedValue != null &&
                 cmbLopCu.SelectedValue != null && cmbNamHocMoi.SelectedValue != null &&
                 cmbKhoiLopMoi.SelectedValue != null && cmbLopMoi.SelectedValue != null)
@@ -167,6 +167,7 @@ namespace QuanLyHocSinh
                     cmbLopMoi.SelectedValue.ToString(),
                     lvLopMoi
                 );
+     
                 MessageBox.Show("Đã lưu vào bảng phân lớp !", "COMPLETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else MessageBox.Show("Giá trị của các ô không được rỗng !", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);

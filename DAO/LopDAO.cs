@@ -19,6 +19,16 @@ namespace DAO
             }
             private set => instance = value;
         }
+        public void ThemSiSo(string maLop)
+        {
+            string query = $"EXEC ThemSiSo {maLop}";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+        public void BotSiSo(string maLop)
+        {
+            string query = $"EXEC BotSiSo {maLop}";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
 
         public DataTable LayDanhSachLop()
         {

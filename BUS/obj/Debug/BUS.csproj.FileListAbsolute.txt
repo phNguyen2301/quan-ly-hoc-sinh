@@ -20,3 +20,14 @@ D:\Programing\school\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.csproj.CoreCompileI
 D:\Programing\school\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\Programing\school\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.dll
 D:\Programing\school\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.pdb
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\bin\Debug\BUS.dll
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\bin\Debug\BUS.pdb
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\bin\Debug\DAO.dll
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\bin\Debug\DTO.dll
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\bin\Debug\DAO.pdb
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\bin\Debug\DTO.pdb
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.dll
+C:\Users\nguye\programing\doan\quan-ly-hoc-sinh\BUS\obj\Debug\BUS.pdb

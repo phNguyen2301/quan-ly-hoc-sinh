@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I7cCWFctjUEIFqhSVfl3FK9S9I11OkdTPp1CPsARa2iHXRqv8VtraI9Bjv0DR3buVJ0BnhSwBRAiA5E4pFIUAw==",
+  "dgSpecHash": "0pWXQcFRKgsZz5OYJOXV6GWr7DcrtREADtvPlrXNfSoLWnQu70V2hXZcpiY0VUIr/bRySmekaBI/mTfy9pUkGg==",
   "success": true,
-  "projectFilePath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+  "projectFilePath": "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nguye\\.nuget\\packages\\deltacompressiondotnet\\1.1.0\\deltacompressiondotnet.1.1.0.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\150.1427.0\\microsoft.reportingservices.reportviewercontrol.winforms.150.1427.0.nupkg.sha512",

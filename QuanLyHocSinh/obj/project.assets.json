@@ -1186,11 +1186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+      "projectUniqueName": "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
       "projectName": "QuanLyHocSinh",
-      "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
+      "projectPath": "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\QuanLyHocSinh.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
+      "outputPath": "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\QuanLyHocSinh\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1207,11 +1207,11 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
-              "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
+            "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\BUS\\BUS.csproj"
             },
-            "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
-              "projectPath": "D:\\Programing\\school\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
+            "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\nguye\\programing\\doan\\quan-ly-hoc-sinh\\DTO\\DTO.csproj"
             }
           }
         }

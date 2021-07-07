@@ -37,19 +37,15 @@ namespace QuanLyHocSinh
             {
                 foreach (string col in colNames)
                 {
-                    if (row.Cells[col].Value != null)
+                    if (row.Cells[col].Value == null)
                     {
-                        string str = row.Cells[col].Value.ToString();
-                        if (string.IsNullOrWhiteSpace(str))
-                        {
-                            MessageBox.Show(
-                                "Giá trị của ô không được rỗng !",
-                                "ERROR",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error
-                            );
-                            return false;
-                        }
+                        MessageBox.Show(
+                            "Giá trị của ô không được rỗng !",
+                            "ERROR",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return false;
                     }
                 }
             }
@@ -64,34 +60,19 @@ namespace QuanLyHocSinh
                 {
                     if (row.Cells[col].Value != null)
                     {
-                        string chuoiDiem = row.Cells[col].Value.ToString();
-                        int count = 0;
+                        string Diem = row.Cells[col].Value.ToString();
 
-                        for (int i = 0; i < chuoiDiem.Length; i++)
+                        if (!QuyDinhBUS.Instance.KiemTraDiem(Diem))
                         {
-                            if (chuoiDiem[i] != ';' && i != chuoiDiem.Length - 1) count++;
-                            else
-                            {
-                                if (i == chuoiDiem.Length - 1)
-                                {
-                                    i++;
-                                    count++;
-                                }
-
-                                string diemDaXuLy = chuoiDiem.Substring(i - count, count);
-                                if (count != 0 && !QuyDinhBUS.Instance.KiemTraDiem(diemDaXuLy))
-                                {
-                                    MessageBox.Show(
-                                        $"Điểm của học sinh {row.Cells["colHoTen"].Value} không hợp lệ!",
-                                        "ERROR",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error
-                                    );
-                                    return false;
-                                }
-                                count = 0;
-                            }
+                            MessageBox.Show(
+                                    $"Điểm của học sinh {row.Cells["colHoTen"].Value} không hợp lệ!",
+                                    "ERROR",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                );
+                            return false;
                         }
+
                     }
                 }
             }

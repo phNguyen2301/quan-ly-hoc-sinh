@@ -24,6 +24,7 @@ namespace BUS
 
         public void LuuKetQua(string maLop, string maNamHoc, string maHocKy)
         {
+            
             LopDTO lop = new LopDTO();
             lop.MaLop = maLop;
             lop.SiSo = LopDAO.Instance.LaySiSo(maLop);

@@ -45,6 +45,7 @@ namespace QuanLyHocSinh
 
             dataTable.Rows.Add(dataRow);
             bindingSource.MoveLast();
+
         }
 
         private void bindingNavigatorRefreshItem_Click(object sender, EventArgs e)
@@ -56,7 +57,6 @@ namespace QuanLyHocSinh
                 txtTenLop,
                 cmbKhoiLop,
                 cmbNamHoc,
-                iniSiSo,
                 cmbGiaoVien
             );
         }
@@ -77,8 +77,7 @@ namespace QuanLyHocSinh
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             string[] colNames = { "colMaLop", "colTenLop", "colMaKhoiLop", "colMaNamHoc", "colMaGiaoVien" };
-            if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvLop, colNames) &&
-                KiemTraTruocKhiLuu.KiemTraSiSo(dgvLop, "colSiSo"))
+            if (KiemTraTruocKhiLuu.KiemTraDataGridView(dgvLop, colNames))
             {
                 bindingNavigatorPositionItem.Focus();
                 BindingSource bindingSource = bindingNavigatorLop.BindingSource;
@@ -123,8 +122,7 @@ namespace QuanLyHocSinh
                 string.IsNullOrWhiteSpace(txtTenLop.Text)  ||
                 cmbKhoiLop.SelectedValue == null ||
                 cmbNamHoc.SelectedValue == null ||
-                cmbGiaoVien.SelectedValue == null ||
-                !QuyDinhBUS.Instance.KiemTraSiSo(iniSiSo.Value))
+                cmbGiaoVien.SelectedValue == null)
                 MessageBox.Show(
                     "Giá trị của các ô không được rỗng và sỉ số phải theo quy định !", 
                     "ERROR", 
@@ -138,7 +136,7 @@ namespace QuanLyHocSinh
                     txtTenLop.Text,
                     cmbKhoiLop.SelectedValue.ToString(),
                     cmbNamHoc.SelectedValue.ToString(), 
-                    iniSiSo.Value,
+                    0,
                     cmbGiaoVien.SelectedValue.ToString()
                 );
                 LopBUS.Instance.ThemLop(lop);

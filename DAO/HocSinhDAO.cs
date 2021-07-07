@@ -33,10 +33,10 @@ namespace DAO
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 
-        public DataTable LayDanhSachHocSinhTheoLop(string namHoc, string khoiLop, string lop)
+        public DataTable LayDanhSachHocSinhTheoLop(string namHoc, string lop)
         {
-            string query = "EXEC LayDanhSachHocSinhTheoLop @maNamHoc , @maKhoiLop , @maLop";
-            object[] parameters = new object[] { namHoc, khoiLop, lop };
+            string query = "EXEC LayDanhSachHocSinhTheoLop @maNamHoc , @maLop";
+            object[] parameters = new object[] { namHoc, lop };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
 

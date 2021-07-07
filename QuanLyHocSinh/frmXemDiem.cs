@@ -61,9 +61,6 @@ namespace QuanLyHocSinh
             string maNamHoc = cmbNamHoc.SelectedValue.ToString();
             string maLop = cmbLop.SelectedValue.ToString();
 
-            KQHSMonHocBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc, maMonHoc, maHocKy);
-            KQHSCaNamBUS.Instance.LuuKetQua(maHocSinh, maLop, maNamHoc);
-
             frmDiem frm = (frmDiem)Application.OpenForms["frmDiem"];
             if (frm != null) frm.btnHienThiClicked(sender, e);
         }

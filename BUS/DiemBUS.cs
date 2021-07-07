@@ -28,10 +28,9 @@ namespace BUS
             ComboBoxEx cmbMonHoc, 
             ComboBoxEx cmbHocKy, 
             ComboBoxEx cmbNamHoc, 
-            ComboBoxEx cmbLop, 
-            ref int[,] STT)
+            ComboBoxEx cmbLop 
+            )
         {
-            STT = new int[60, 20];
             int countRowHocSinh = 0;
 
             foreach (DataGridViewRow rowHocSinh in dataGridViewX.Rows)
@@ -56,7 +55,6 @@ namespace BUS
                 foreach (DataRow rowDiem in dataTable.Rows)
                 {
                     countRowDiem++;
-                    STT[countRowHocSinh, countRowDiem] = int.Parse(rowDiem["STT"].ToString());
                     string loaiDiem = rowDiem["MaLoai"].ToString();
 
                     if (loaiDiem == "LD0001") diemMieng[soDiemMieng++] = rowDiem["Diem"].ToString();
@@ -87,7 +85,6 @@ namespace BUS
             {
                 ListViewItem item = new ListViewItem();
 
-                item.Text = row["STT"].ToString();
                 item.SubItems.Add(row["MaHocSinh"].ToString());
                 item.SubItems.Add(row["HoTen"].ToString());
                 item.SubItems.Add(row["TenMonHoc"].ToString());
@@ -97,12 +94,20 @@ namespace BUS
                 lvXemDiem.Items.Add(item);
             }
         }
-
-        public float LayDiemMiengTB(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
+        public float[]LayDiemHK(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
         {
+            float[] DanhSachDiem = new float[5];
             DataTable dataTable = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
-            float tongDiem = 0;
-            int tongHeSo = 0;
+            float tongDiemMieng = 0;
+            int tongHeSoMieng = 0;
+            float tongDiem15Phut = 0;
+            int tongHeSo15Phut = 0;
+            float tongDiem45Phut = 0;
+            int tongHeSo45Phut = 0;
+            float tongDiemThi = 0;
+            int tongHeSoThi = 0;
+            float tongDiemHK = 0;
+            int tongHeSoHK = 0;
 
             foreach (DataRow row in dataTable.Rows)
             {
@@ -110,78 +115,52 @@ namespace BUS
                 {
                     float diem = Convert.ToSingle(row["Diem"].ToString());
                     int heSo = Convert.ToInt32(row["HeSo"].ToString());
-                    tongDiem += diem * heSo;
-                    tongHeSo += heSo;
+                    tongDiemMieng += diem * heSo;
+                    tongHeSoMieng += heSo;
+                    tongHeSoHK += heSo;
+                    tongDiemHK += diem * heSo;
                 }
-            }
-
-            if (tongHeSo <= 0) return 0;
-            return (float)Math.Round(tongDiem / tongHeSo, 2);
-        }
-
-        public float LayDiem15PhutTB(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
-        {
-            DataTable dataTable = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
-            float tongDiem = 0;
-            int tongHeSo = 0;
-
-            foreach (DataRow row in dataTable.Rows)
-            {
                 if (row["MaLoai"].ToString() == "LD0002")
                 {
                     float diem = Convert.ToSingle(row["Diem"].ToString());
                     int heSo = Convert.ToInt32(row["HeSo"].ToString());
-                    tongDiem += diem * heSo;
-                    tongHeSo += heSo;
+                    tongDiem15Phut += diem * heSo;
+                    tongHeSo15Phut += heSo;
+                    tongHeSoHK += heSo;
+                    tongDiemHK += diem * heSo;
                 }
-            }
-
-            if (tongHeSo <= 0) return 0;
-            return (float)Math.Round(tongDiem / tongHeSo, 2);
-        }
-
-        public float LayDiem45PhutTB(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
-        {
-            DataTable dataTable = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
-            float tongDiem = 0;
-            int tongHeSo = 0;
-
-            foreach (DataRow row in dataTable.Rows)
-            {
                 if (row["MaLoai"].ToString() == "LD0003")
                 {
                     float diem = Convert.ToSingle(row["Diem"].ToString());
                     int heSo = Convert.ToInt32(row["HeSo"].ToString());
-                    tongDiem += diem * heSo;
-                    tongHeSo += heSo;
+                    tongDiem45Phut += diem * heSo;
+                    tongHeSo45Phut += heSo;
+                    tongHeSoHK += heSo;
+                    tongDiemHK += diem * heSo;
                 }
-            }
-
-            if (tongHeSo <= 0) return 0;
-            return (float)Math.Round(tongDiem / tongHeSo, 2);
-        }
-
-        public float LayDiemThi(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
-        {
-            DataTable dataTable = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
-            float tongDiem = 0;
-            int tongHeSo = 0;
-
-            foreach (DataRow row in dataTable.Rows)
-            {
                 if (row["MaLoai"].ToString() == "LD0004")
                 {
                     float diem = Convert.ToSingle(row["Diem"].ToString());
                     int heSo = Convert.ToInt32(row["HeSo"].ToString());
-                    tongDiem += diem * heSo;
-                    tongHeSo += heSo;
+                    tongDiemThi += diem * heSo;
+                    tongHeSoThi += heSo;
+                    tongHeSoHK += heSo;
+                    tongDiemHK += diem * heSo;
                 }
             }
 
-            if (tongHeSo <= 0) return 0;
-            return (float)Math.Round(tongDiem / tongHeSo, 2);
+            if (tongHeSoMieng <= 0) DanhSachDiem[0] = 0;
+            else DanhSachDiem[0] = (float)Math.Round(tongDiemMieng / tongHeSoMieng, 2);
+            if (tongHeSo15Phut <= 0) DanhSachDiem[1] = 0;
+            else DanhSachDiem[1] = (float)Math.Round(tongDiem15Phut / tongHeSo15Phut, 2);
+            if (tongHeSo45Phut <= 0) DanhSachDiem[2] = 0; 
+            else DanhSachDiem[2] = (float)Math.Round(tongDiem45Phut / tongHeSo45Phut, 2);
+            if (tongHeSoThi <= 0) DanhSachDiem[3] = 0; 
+            else DanhSachDiem[3] = (float)Math.Round(tongDiemThi / tongHeSoThi, 2);
+            if (tongHeSoHK <= 0) DanhSachDiem[4] = 0; 
+            else DanhSachDiem[4] = (float)Math.Round(tongDiemHK / tongHeSoHK, 2);
+            return DanhSachDiem;
         }
-
         public float LayDiemTBHKTheoMon(string maHocSinh, string maLop, string maNamHoc, string maMonHoc, string maHocKy)
         {
             DataTable dataTable = DiemDAO.Instance.LayDanhSachDiemHocSinh(maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop);
@@ -281,9 +260,9 @@ namespace BUS
             return soLuongDat;
         }
 
-        public void ThemDiem(DiemDTO diem)
+        public void UpdateDiem(DiemDTO diem)
         {
-            DiemDAO.Instance.ThemDiem(diem);
+            DiemDAO.Instance.UpdateDiem(diem);
         }
 
         public void XoaDiem(int stt)
